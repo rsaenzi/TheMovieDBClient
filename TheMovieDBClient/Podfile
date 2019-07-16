@@ -1,0 +1,50 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+target 'TheMovieDBClient' do
+
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TheMovieDBClient
+
+  # ReactiveX
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+  # Networking
+  pod 'Moya'
+  pod 'ReachabilitySwift'
+
+  # Image
+  pod 'Kingfisher'
+  pod 'ImageViewer'
+
+  # UI Management
+  pod 'TPKeyboardAvoiding'
+
+  # Alerts & Animation
+  pod 'KVNProgress'
+
+  # Localization
+  pod 'PolyglotLocalization'
+
+  # Util
+  pod 'SwiftLint'
+
+  # Persistence
+  pod 'RealmSwift'
+
+
+  target 'TheMovieDBClientTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+
+  target 'TheMovieDBClientUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
