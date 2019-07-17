@@ -18,7 +18,6 @@ target 'TheMovieDBClient' do
 
   # Image
   pod 'Kingfisher'
-  pod 'ImageViewer'
 
   # UI Management
   pod 'TPKeyboardAvoiding'
