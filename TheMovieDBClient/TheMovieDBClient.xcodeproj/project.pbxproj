@@ -12,6 +12,13 @@
 		B1040E3C22E2DCCD00E0D25A /* WelcomeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1040E3B22E2DCCD00E0D25A /* WelcomeVC.storyboard */; };
 		B1040E3E22E2DE0100E0D25A /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1040E3D22E2DE0100E0D25A /* WelcomeVC.swift */; };
 		B1040E4222E2E29C00E0D25A /* UIViewController+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1040E4122E2E29C00E0D25A /* UIViewController+Load.swift */; };
+		B123FE8922E38E1C008B8D1D /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE8822E38E1C008B8D1D /* ApiEndpoint.swift */; };
+		B123FE8B22E39040008B8D1D /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE8A22E39040008B8D1D /* ApiUtils.swift */; };
+		B123FE8D22E3913C008B8D1D /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE8C22E3913C008B8D1D /* BuildConfiguration.swift */; };
+		B123FE9022E39235008B8D1D /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE8F22E39235008B8D1D /* DateFormats.swift */; };
+		B123FE9222E39280008B8D1D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE9122E39280008B8D1D /* Log.swift */; };
+		B123FE9422E3997D008B8D1D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE9322E3997D008B8D1D /* ApiRequest.swift */; };
+		B123FE9622E39E2A008B8D1D /* GetPopularMoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FE9522E39E2A008B8D1D /* GetPopularMoviesInteractor.swift */; };
 		B1579BC622DE8BEA00C3FB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1579BC522DE8BEA00C3FB8A /* AppDelegate.swift */; };
 		B1579BCD22DE8BEB00C3FB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1579BCC22DE8BEB00C3FB8A /* Assets.xcassets */; };
 		B1579BD022DE8BEB00C3FB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1579BCE22DE8BEB00C3FB8A /* LaunchScreen.storyboard */; };
@@ -55,6 +62,13 @@
 		B1040E3B22E2DCCD00E0D25A /* WelcomeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeVC.storyboard; sourceTree = "<group>"; };
 		B1040E3D22E2DE0100E0D25A /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		B1040E4122E2E29C00E0D25A /* UIViewController+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Load.swift"; sourceTree = "<group>"; };
+		B123FE8822E38E1C008B8D1D /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		B123FE8A22E39040008B8D1D /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
+		B123FE8C22E3913C008B8D1D /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		B123FE8F22E39235008B8D1D /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
+		B123FE9122E39280008B8D1D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		B123FE9322E3997D008B8D1D /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		B123FE9522E39E2A008B8D1D /* GetPopularMoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPopularMoviesInteractor.swift; sourceTree = "<group>"; };
 		B1579BC222DE8BEA00C3FB8A /* TheMovieDBClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1579BC522DE8BEA00C3FB8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1579BCC22DE8BEB00C3FB8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +159,9 @@
 		B112F04A22DE909B004B56FA /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				B123FE9522E39E2A008B8D1D /* GetPopularMoviesInteractor.swift */,
+				B123FE8E22E3921D008B8D1D /* Utils */,
+				B123FE8522E38CBA008B8D1D /* API */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -222,6 +239,26 @@
 				B1579BCE22DE8BEB00C3FB8A /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		B123FE8522E38CBA008B8D1D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B123FE8822E38E1C008B8D1D /* ApiEndpoint.swift */,
+				B123FE9322E3997D008B8D1D /* ApiRequest.swift */,
+				B123FE8A22E39040008B8D1D /* ApiUtils.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B123FE8E22E3921D008B8D1D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B123FE8C22E3913C008B8D1D /* BuildConfiguration.swift */,
+				B123FE8F22E39235008B8D1D /* DateFormats.swift */,
+				B123FE9122E39280008B8D1D /* Log.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B1579BB922DE8BEA00C3FB8A = {
@@ -522,15 +559,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B123FE8B22E39040008B8D1D /* ApiUtils.swift in Sources */,
 				B161094022E13E2800AF58AD /* UIApplication+AppVersion.swift in Sources */,
+				B123FE9222E39280008B8D1D /* Log.swift in Sources */,
 				B161094722E1490A00AF58AD /* Color.swift in Sources */,
+				B123FE8D22E3913C008B8D1D /* BuildConfiguration.swift in Sources */,
 				B161094222E13F2000AF58AD /* UITableView+Load.swift in Sources */,
 				B1977F5622E2EB45006A289B /* MovieInfoVC.swift in Sources */,
 				B161094422E13F7800AF58AD /* UICollectionView+Load.swift in Sources */,
 				B1040E3E22E2DE0100E0D25A /* WelcomeVC.swift in Sources */,
 				B1040E4222E2E29C00E0D25A /* UIViewController+Load.swift in Sources */,
+				B123FE9622E39E2A008B8D1D /* GetPopularMoviesInteractor.swift in Sources */,
+				B123FE8922E38E1C008B8D1D /* ApiEndpoint.swift in Sources */,
 				B194FA0822E2E5D6007F06F2 /* MovieCatalogVC.swift in Sources */,
 				B1579BC622DE8BEA00C3FB8A /* AppDelegate.swift in Sources */,
+				B123FE9022E39235008B8D1D /* DateFormats.swift in Sources */,
+				B123FE9422E3997D008B8D1D /* ApiRequest.swift in Sources */,
 				B1977F5922E2F435006A289B /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +750,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D BUILD_CONFIG_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsaenzi.TheMovieDBClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -725,6 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D BUILD_CONFIG_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsaenzi.TheMovieDBClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
