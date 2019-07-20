@@ -21,10 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KVNProgressConfiguration().minimumErrorDisplayTime = 2.5
         
         UIApplication.shared.delegate?.window??.tintColor = Color.mainFucsia.color()
-        UINavigationBar.appearance().tintColor = Color.mainFucsia.color()
         UITabBar.appearance().tintColor = Color.mainFucsia.color()
-        UIView.appearance().tintColor = Color.mainFucsia.color()
-        
         return true
     }
 
@@ -49,7 +46,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

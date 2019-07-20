@@ -1,5 +1,5 @@
 //
-//  UIColor+Named.swift
+//  Color.swift
 //  TheMovieDBClient
 //
 //  Created by Rigoberto Saenz Imbacuan on 7/18/19.

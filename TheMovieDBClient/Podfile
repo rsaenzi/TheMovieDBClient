@@ -23,6 +23,7 @@ target 'TheMovieDBClient' do
   pod 'TPKeyboardAvoiding'
 
   # Alerts & Animation
+  pod 'Hero'
   pod 'KVNProgress'
 
   # Localization

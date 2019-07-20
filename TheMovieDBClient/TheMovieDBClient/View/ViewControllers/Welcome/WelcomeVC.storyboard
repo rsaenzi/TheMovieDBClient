@@ -19,25 +19,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconWhite" translatesAutoresizingMaskIntoConstraints="NO" id="spk-nW-oFc">
-                                <rect key="frame" x="103.5" y="344.5" width="207" height="207"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSb-hd-CCk" userLabel="Container">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconWhite" translatesAutoresizingMaskIntoConstraints="NO" id="spk-nW-oFc">
+                                        <rect key="frame" x="103.5" y="344.5" width="207" height="207"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="spk-nW-oFc" secondAttribute="height" multiplier="1:1" id="Kad-Gi-d1U"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="mainFucsia"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="spk-nW-oFc" secondAttribute="height" multiplier="1:1" id="Kad-Gi-d1U"/>
+                                    <constraint firstItem="spk-nW-oFc" firstAttribute="centerX" secondItem="BSb-hd-CCk" secondAttribute="centerX" id="Z5f-l9-7eZ"/>
+                                    <constraint firstItem="spk-nW-oFc" firstAttribute="width" secondItem="BSb-hd-CCk" secondAttribute="width" multiplier="0.5" id="dZW-fu-Xsn"/>
+                                    <constraint firstItem="spk-nW-oFc" firstAttribute="centerY" secondItem="BSb-hd-CCk" secondAttribute="centerY" id="dvT-VR-AOB"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="mainFucsia"/>
                         <constraints>
-                            <constraint firstItem="spk-nW-oFc" firstAttribute="centerX" secondItem="rTT-Jp-KIV" secondAttribute="centerX" id="Imd-Tj-Wqd"/>
-                            <constraint firstItem="spk-nW-oFc" firstAttribute="centerY" secondItem="rTT-Jp-KIV" secondAttribute="centerY" id="aBb-TW-bDh"/>
-                            <constraint firstItem="spk-nW-oFc" firstAttribute="width" secondItem="rTT-Jp-KIV" secondAttribute="width" multiplier="0.5" id="oCZ-OG-UE0"/>
+                            <constraint firstItem="BSb-hd-CCk" firstAttribute="leading" secondItem="Jra-4p-hzO" secondAttribute="leading" id="0W2-At-Ib8"/>
+                            <constraint firstItem="BSb-hd-CCk" firstAttribute="trailing" secondItem="Jra-4p-hzO" secondAttribute="trailing" id="QLR-2W-NPb"/>
+                            <constraint firstAttribute="bottom" secondItem="BSb-hd-CCk" secondAttribute="bottom" id="Stf-3U-V2D"/>
+                            <constraint firstItem="BSb-hd-CCk" firstAttribute="top" secondItem="rTT-Jp-KIV" secondAttribute="top" id="vFE-5e-G98"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jra-4p-hzO"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQG-UB-V2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="-153"/>
+            <point key="canvasLocation" x="-204.34782608695653" y="-153.34821428571428"/>
         </scene>
     </scenes>
     <resources>
@@ -46,4 +58,5 @@
             <color red="0.74117647058823533" green="0.16862745098039217" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="mainFucsia"/>
 </document>
