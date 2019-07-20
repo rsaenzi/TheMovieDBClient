@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KVNProgress
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        KVNProgressConfiguration().minimumErrorDisplayTime = 2.5
+        
+        UIApplication.shared.delegate?.window??.tintColor = Color.mainFucsia.color()
+        UINavigationBar.appearance().tintColor = Color.mainFucsia.color()
+        UITabBar.appearance().tintColor = Color.mainFucsia.color()
+        UIView.appearance().tintColor = Color.mainFucsia.color()
+        
         return true
     }
 

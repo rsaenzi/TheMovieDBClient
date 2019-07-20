@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d1v-Zj-Ucg">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="NEt-09-uIy">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d1v-Zj-Ucg" customClass="WelcomeVC" customModule="TheMovieDBClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rTT-Jp-KIV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconWhite" translatesAutoresizingMaskIntoConstraints="NO" id="spk-nW-oFc">
+                                <rect key="frame" x="103.5" y="344.5" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="spk-nW-oFc" secondAttribute="height" multiplier="1:1" id="Kad-Gi-d1U"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="mainFucsia"/>
+                        <constraints>
+                            <constraint firstItem="spk-nW-oFc" firstAttribute="centerX" secondItem="rTT-Jp-KIV" secondAttribute="centerX" id="Imd-Tj-Wqd"/>
+                            <constraint firstItem="spk-nW-oFc" firstAttribute="centerY" secondItem="rTT-Jp-KIV" secondAttribute="centerY" id="aBb-TW-bDh"/>
+                            <constraint firstItem="spk-nW-oFc" firstAttribute="width" secondItem="rTT-Jp-KIV" secondAttribute="width" multiplier="0.5" id="oCZ-OG-UE0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jra-4p-hzO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQG-UB-V2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203" y="-153"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AppIconWhite" width="512" height="512"/>
+        <namedColor name="mainFucsia">
+            <color red="0.74117647058823533" green="0.16862745098039217" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
