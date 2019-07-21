@@ -32,6 +32,8 @@ extension MovieCatalogVC {
         titleView.contentMode = .scaleAspectFit
         titleView.image = Image.AppIconWhite.image()
         navigationItem.titleView = titleView
+        
+        presenter.getPopularMovies()
     }
     
     // TODO: Temporal

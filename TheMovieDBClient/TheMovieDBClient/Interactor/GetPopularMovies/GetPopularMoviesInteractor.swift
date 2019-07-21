@@ -27,13 +27,13 @@ class GetPopularMoviesInteractor {
                 self.process(result)
                 
             case .failure(let error):
-                self.sendResponse( .requestFailureError(error: error))
+                self.sendResponse(.requestFailureError(error: error))
                 
             case .offline(let error):
-                self.sendResponse( .requestOfflineError(error: error))
+                self.sendResponse(.requestOfflineError(error: error))
                 
             case .timeOut(let error):
-                self.sendResponse( .requestTimeOutError(error: error))
+                self.sendResponse(.requestTimeOutError(error: error))
             }
         }
     }
@@ -48,7 +48,7 @@ extension GetPopularMoviesInteractor {
         
         // Convert raw data into a json string
         guard let jsonString = ApiUtils.getJsonString(from: result) else {
-            sendResponse( .responseDataError(response: result))
+            sendResponse(.responseDataError(response: result))
             return
         }
         
@@ -58,22 +58,22 @@ extension GetPopularMoviesInteractor {
             process(jsonString)
             
         case 401, 403:
-            sendResponse( .unauthorizedError(jsonString: jsonString))
+            sendResponse(.unauthorizedError(jsonString: jsonString))
             
         case 404:
-            sendResponse( .resourceNotFoundError(jsonString: jsonString))
+            sendResponse(.resourceNotFoundError(jsonString: jsonString))
             
         case 300...399:
-            sendResponse( .redirectionError(jsonString: jsonString))
+            sendResponse(.redirectionError(jsonString: jsonString))
             
         case 400...499:
-            sendResponse( .clientError(jsonString: jsonString))
+            sendResponse(.clientError(jsonString: jsonString))
             
         case 500...599:
-            sendResponse( .serverError(jsonString: jsonString))
+            sendResponse(.serverError(jsonString: jsonString))
             
         default:
-            sendResponse( .invalidResponseError(jsonString: jsonString))
+            sendResponse(.invalidResponseError(jsonString: jsonString))
         }
     }
     
@@ -81,12 +81,12 @@ extension GetPopularMoviesInteractor {
         
         // Converts the jsonString into a valid Object
         guard let content: GetPopularMoviesContent = jsonString.decodeFrom() else {
-            sendResponse( .jsonDecodingError(jsonString: jsonString))
+            sendResponse(.jsonDecodingError(jsonString: jsonString))
             return
         }
         
         // Returns the parsed object
-        sendResponse( .success(content: content))
+        sendResponse(.success(content: content))
     }
     
     private func sendResponse(_ result: GetPopularMoviesResponse) {

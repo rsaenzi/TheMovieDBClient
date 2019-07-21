@@ -20,3 +20,13 @@ class MovieDetailsVC: UIViewController {
     // MARK: Bindings
     private let bag = DisposeBag()
 }
+
+// MARK: Life Cycle
+extension MovieDetailsVC {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter.getMovieDetails(for: 429617) // TODO: Spiderman
+    }
+}
