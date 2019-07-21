@@ -1,19 +1,18 @@
 //
-//  GetPopularMoviesResponse.swift
+//  GetConfigurationResponse.swift
 //  TheMovieDBClient
 //
-//  Created by Rigoberto Saenz Imbacuan on 7/20/19.
+//  Created by Rigoberto Saenz Imbacuan on 7/21/19.
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
 import Moya
 
-enum GetPopularMoviesResponse {
+enum GetConfigurationResponse {
     
     // API Errors
-    case success(content: PopularMovies)
+    case success(content: Configuration)
     case unauthorizedError(jsonString: String)
-    case resourceNotFoundError(jsonString: String)
     
     // Response Errors
     case responseDataError(response: Moya.Response)

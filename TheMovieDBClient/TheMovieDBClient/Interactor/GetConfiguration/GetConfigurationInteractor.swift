@@ -1,8 +1,8 @@
 //
-//  GetPopularMoviesInteractor.swift
+//  GetConfigurationInteractor.swift
 //  TheMovieDBClient
 //
-//  Created by Rigoberto Saenz Imbacuan on 7/20/19.
+//  Created by Rigoberto Saenz Imbacuan on 7/21/19.
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
@@ -10,13 +10,13 @@ import Moya
 import RxSwift
 
 // MARK: Public
-class GetPopularMoviesInteractor {
+class GetConfigurationInteractor {
     
-    let bindResponse = PublishSubject<GetPopularMoviesResponse>()
+    let bindResponse = PublishSubject<GetConfigurationResponse>()
     
-    func request(page: Int? = nil) {
+    func request() {
         
-        let endpoint = ApiEndpoint.getPopularMovies(page: page)
+        let endpoint = ApiEndpoint.getConfiguration
         
         ApiRequest.request(to: endpoint) { [weak self] response in
             guard let `self` = self else { return }
@@ -40,7 +40,7 @@ class GetPopularMoviesInteractor {
 }
 
 // MARK: Internals
-extension GetPopularMoviesInteractor {
+extension GetConfigurationInteractor {
     
     private func process(_ result: Response) {
         
@@ -57,11 +57,8 @@ extension GetPopularMoviesInteractor {
         case 200:
             process(jsonString)
             
-        case 401, 403:
+        case 401, 403, 404:
             sendResponse(.unauthorizedError(jsonString: jsonString))
-            
-        case 404:
-            sendResponse(.resourceNotFoundError(jsonString: jsonString))
             
         case 300...399:
             sendResponse(.redirectionError(jsonString: jsonString))
@@ -80,7 +77,7 @@ extension GetPopularMoviesInteractor {
     private func process(_ jsonString: String) {
         
         // Converts the jsonString into a valid Object
-        guard let content: PopularMovies = jsonString.decodeFrom() else {
+        guard let content: Configuration = jsonString.decodeFrom() else {
             sendResponse(.jsonDecodingError(jsonString: jsonString))
             return
         }
@@ -89,7 +86,7 @@ extension GetPopularMoviesInteractor {
         sendResponse(.success(content: content))
     }
     
-    private func sendResponse(_ result: GetPopularMoviesResponse) {
+    private func sendResponse(_ result: GetConfigurationResponse) {
         
         DispatchQueue.main.async { [weak self] in
             guard let `self` = self else { return }

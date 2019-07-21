@@ -14,7 +14,7 @@ enum ApiEndpoint {
      Get the system wide configuration information. Some elements of the API require some knowledge of this configuration data. The purpose of this is to try and keep the actual API responses as light as possible.
      https://developers.themoviedb.org/3/configuration/get-api-configuration
      */
-    case configuration
+    case getConfiguration
     
     /*
      Get a list of the current popular movies on TMDb. This list updates daily.
@@ -38,7 +38,7 @@ extension ApiEndpoint: TargetType {
     var path: String {
         switch self {
             
-        case .configuration:
+        case .getConfiguration:
             return "/configuration"
             
         case .getPopularMovies:
@@ -52,7 +52,7 @@ extension ApiEndpoint: TargetType {
     var method: Method {
         switch self {
             
-        case .configuration, .getPopularMovies, .getMovieDetails:
+        case .getConfiguration, .getPopularMovies, .getMovieDetails:
             return .get
         }
     }
@@ -76,7 +76,7 @@ extension ApiEndpoint: TargetType {
         
         switch self {
             
-        case .configuration, .getMovieDetails:
+        case .getConfiguration, .getMovieDetails:
             return .requestParameters(
                 parameters: parameters,
                 encoding: URLEncoding.queryString)
