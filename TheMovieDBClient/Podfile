@@ -29,6 +29,9 @@ target 'TheMovieDBClient' do
   # Localization
   pod 'PolyglotLocalization'
 
+  # Security
+  pod 'UAObfuscatedString'
+
   # Util
   pod 'SwiftLint'
 

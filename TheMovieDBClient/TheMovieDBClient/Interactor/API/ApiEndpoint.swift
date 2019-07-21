@@ -11,6 +11,12 @@ import Moya
 enum ApiEndpoint {
     
     /*
+     Get the system wide configuration information. Some elements of the API require some knowledge of this configuration data. The purpose of this is to try and keep the actual API responses as light as possible.
+     https://developers.themoviedb.org/3/configuration/get-api-configuration
+     */
+    case configuration
+    
+    /*
      Get a list of the current popular movies on TMDb. This list updates daily.
      https://developers.themoviedb.org/3/movies/get-popular-movies
      */
@@ -26,11 +32,14 @@ enum ApiEndpoint {
 extension ApiEndpoint: TargetType {
     
     var baseURL: URL {
-        return URL(string: "https://api.themoviedb.org/3")!
+        return URL(string: ApiCredentials.apiURL)!
     }
     
     var path: String {
         switch self {
+            
+        case .configuration:
+            return "/configuration"
             
         case .getPopularMovies:
             return "/movie/popular"
@@ -43,7 +52,7 @@ extension ApiEndpoint: TargetType {
     var method: Method {
         switch self {
             
-        case .getPopularMovies, .getMovieDetails:
+        case .configuration, .getPopularMovies, .getMovieDetails:
             return .get
         }
     }
@@ -58,8 +67,7 @@ extension ApiEndpoint: TargetType {
     var task: Task {
         
         var parameters = [String: Any]()
-        // TODO: Obfuscate this
-        parameters["api_key"] = "ae79474bf16e5cab759a3f4f078a4f5e"
+        parameters["api_key"] = ApiCredentials.apiKey
         
         if let lang = Locale.current.languageCode,
             let region = Locale.current.regionCode {
@@ -68,17 +76,17 @@ extension ApiEndpoint: TargetType {
         
         switch self {
             
+        case .configuration, .getMovieDetails:
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString)
+            
         case .getPopularMovies(let page):
             
             if let validPage = page {
                 parameters["page"] = validPage
             }
             
-            return .requestParameters(
-                parameters: parameters,
-                encoding: URLEncoding.queryString)
-            
-        case .getMovieDetails:
             return .requestParameters(
                 parameters: parameters,
                 encoding: URLEncoding.queryString)

@@ -37,6 +37,7 @@
 		B123FEC422E501BE008B8D1D /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FEC322E501BE008B8D1D /* ProductionCompany.swift */; };
 		B123FEC622E501D4008B8D1D /* ProductionCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FEC522E501D4008B8D1D /* ProductionCountry.swift */; };
 		B123FEC822E501E3008B8D1D /* SpokenLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FEC722E501E3008B8D1D /* SpokenLanguage.swift */; };
+		B137E92722E50A5400408B1C /* ApiCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137E92622E50A5400408B1C /* ApiCredentials.swift */; };
 		B1579BC622DE8BEA00C3FB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1579BC522DE8BEA00C3FB8A /* AppDelegate.swift */; };
 		B1579BCD22DE8BEB00C3FB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1579BCC22DE8BEB00C3FB8A /* Assets.xcassets */; };
 		B1579BD022DE8BEB00C3FB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1579BCE22DE8BEB00C3FB8A /* LaunchScreen.storyboard */; };
@@ -106,6 +107,7 @@
 		B123FEC322E501BE008B8D1D /* ProductionCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
 		B123FEC522E501D4008B8D1D /* ProductionCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCountry.swift; sourceTree = "<group>"; };
 		B123FEC722E501E3008B8D1D /* SpokenLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpokenLanguage.swift; sourceTree = "<group>"; };
+		B137E92622E50A5400408B1C /* ApiCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCredentials.swift; sourceTree = "<group>"; };
 		B1579BC222DE8BEA00C3FB8A /* TheMovieDBClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1579BC522DE8BEA00C3FB8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1579BCC22DE8BEB00C3FB8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				B123FEB622E3DCA7008B8D1D /* GetMovieDetails */,
 				B123FE8522E38CBA008B8D1D /* API */,
 				B123FE8E22E3921D008B8D1D /* Utils */,
+				B137E92622E50A5400408B1C /* ApiCredentials.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				B123FEB322E3D290008B8D1D /* MovieCatalogState.swift in Sources */,
 				B123FE8D22E3913C008B8D1D /* BuildConfiguration.swift in Sources */,
 				B123FEC822E501E3008B8D1D /* SpokenLanguage.swift in Sources */,
+				B137E92722E50A5400408B1C /* ApiCredentials.swift in Sources */,
 				B123FEA222E3BEB4008B8D1D /* GetPopularMoviesResponse.swift in Sources */,
 				B123FEC622E501D4008B8D1D /* ProductionCountry.swift in Sources */,
 				B161094222E13F2000AF58AD /* UITableView+Load.swift in Sources */,
