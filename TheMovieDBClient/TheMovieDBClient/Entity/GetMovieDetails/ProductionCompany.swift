@@ -20,3 +20,17 @@ struct ProductionCompany: Codable {
         case originCountry = "origin_country"
     }
 }
+
+extension ProductionCompany {
+    
+    func getLogoPathImage() -> String? {
+        
+        guard let url = ApiCredentials.imageBaseUrl,
+              let size = ApiCredentials.imageLogoSize,
+              let path = logoPath else {
+            return nil
+        }
+        
+        return "\(url)\(size)\(path)"
+    }
+}

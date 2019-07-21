@@ -48,16 +48,10 @@ extension MovieCatalogPresenter {
 
 // MARK: Actions
 extension MovieCatalogPresenter {
-    
-//    func loadConfiguration() {
-//        state.onNext(.fetchingData)
-//        getConfigurationInteractor.request()
-//    }
-    
+
     func getPopularMovies() {
         state.onNext(.fetchingData)
         getConfigurationInteractor.request()
-//        getPopularMoviesInteractor.request()
     }
 }
 
@@ -70,7 +64,15 @@ extension MovieCatalogPresenter {
             
         case .success(let content):
             
-            // TODO: Cache Configuration Object here!
+            // Save the required values to build the images full URL
+            ApiCredentials.imageBaseUrl = content.images.secureBaseUrl
+            
+            // To improve performance we choose the smallest Image Size value
+            ApiCredentials.imageBackdropSize = getSmallestValue(from: content.images.backdropSizes)
+            ApiCredentials.imageLogoSize = getSmallestValue(from: content.images.logoSizes)
+            ApiCredentials.imagePosterSize = getSmallestValue(from: content.images.posterSizes)
+            ApiCredentials.imageProfileSize = getSmallestValue(from: content.images.profileSizes)
+            ApiCredentials.imageStillSize = getSmallestValue(from: content.images.stillSizes)
             
             getPopularMoviesInteractor.request()
             
@@ -107,5 +109,25 @@ extension MovieCatalogPresenter {
         case .requestFailureError, .requestOfflineError, .requestTimeOutError:
             state.onNext(.noInternet)
         }
+    }
+    
+    private func getSmallestValue(from stringValues: [String]) -> String {
+        
+        let intValues = stringValues
+            .map { sizeItem -> String in
+                return sizeItem.removeNonNumericCharacters()
+                
+            }.filter { item -> Bool in
+                return item.count > 0
+                
+            }.map { item -> Int in
+                return Int(item)!
+            }
+        
+        guard let min = intValues.min() else {
+            return ""
+        }
+        
+        return "w\(min)"
     }
 }

@@ -40,3 +40,28 @@ struct MovieResult: Codable {
         case adult = "adult"
     }
 }
+
+extension MovieResult {
+    
+    func getPosterPathImage() -> String? {
+        
+        guard let url = ApiCredentials.imageBaseUrl,
+              let size = ApiCredentials.imagePosterSize,
+              let path = posterPath else {
+            return nil
+        }
+        
+        return "\(url)\(size)\(path)"
+    }
+    
+    func getBackdropPathImage() -> String? {
+
+        guard let url = ApiCredentials.imageBaseUrl,
+              let size = ApiCredentials.imageBackdropSize,
+              let path = backdropPath else {
+            return nil
+        }
+        
+        return "\(url)\(size)\(path)"
+    }
+}
