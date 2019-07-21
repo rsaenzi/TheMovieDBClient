@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  TheMovieDBClient
+
+  Created by Rigoberto Saenz Imbacuan on 7/20/19.
+  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
+*/
+
+// English
+
+// General
+"appName" = "";
+
+// Movie Catalog
+"movieCatalogCredentialsError" = "";
+"movieCatalogGeneralError" = "";
+"movieCatalogServerError" = "";
+
+// Movie Details
+"movieDetailsCredentialsError" = "";
+"movieDetailsGeneralError" = "";
+"movieDetailsServerError" = "";

@@ -10,8 +10,17 @@ import Moya
 
 enum ApiEndpoint {
     
-    // Get a list of the current popular movies on TMDb. This list updates daily.
+    /*
+     Get a list of the current popular movies on TMDb. This list updates daily.
+     https://developers.themoviedb.org/3/movies/get-popular-movies
+     */
     case getPopularMovies(page: Int?)
+    
+    /*
+     Get the primary information about a movie.
+     https://developers.themoviedb.org/3/movies/get-movie-details
+     */
+    case getMovieDetails(movieId: Int)
 }
 
 extension ApiEndpoint: TargetType {
@@ -25,13 +34,16 @@ extension ApiEndpoint: TargetType {
             
         case .getPopularMovies:
             return "/movie/popular"
+            
+        case .getMovieDetails(let movieId):
+            return "/movie/\(movieId)"
         }
     }
     
     var method: Method {
         switch self {
             
-        case .getPopularMovies:
+        case .getPopularMovies, .getMovieDetails:
             return .get
         }
     }
@@ -44,24 +56,29 @@ extension ApiEndpoint: TargetType {
     }
     
     var task: Task {
+        
+        var parameters = [String: Any]()
+        // TODO: Obfuscate this
+        parameters["api_key"] = "ae79474bf16e5cab759a3f4f078a4f5e"
+        
+        if let lang = Locale.current.languageCode,
+            let region = Locale.current.regionCode {
+            parameters["language"] = "\(lang)-\(region)"
+        }
+        
         switch self {
             
         case .getPopularMovies(let page):
-            
-            var parameters = [String: Any]()
-            
-            // TODO: Obfuscate this
-            parameters["api_key"] = "ae79474bf16e5cab759a3f4f078a4f5e"
-            
-            if let lang = Locale.current.languageCode,
-                let region = Locale.current.regionCode {
-                parameters["language"] = "\(lang)-\(region)"
-            }
             
             if let validPage = page {
                 parameters["page"] = validPage
             }
             
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.queryString)
+            
+        case .getMovieDetails:
             return .requestParameters(
                 parameters: parameters,
                 encoding: URLEncoding.queryString)

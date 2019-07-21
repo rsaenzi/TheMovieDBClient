@@ -10,17 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Info-->
+        <!--Movie Details-->
         <scene sceneID="hVr-5W-lV4">
             <objects>
-                <viewController storyboardIdentifier="MovieInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L62-JP-ez9" customClass="MovieInfoVC" customModule="TheMovieDBClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L62-JP-ez9" customClass="MovieDetailsVC" customModule="TheMovieDBClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3QH-hH-Fdk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tuu-hG-7j8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="OwV-Qi-pYQ">
+                    <navigationItem key="navigationItem" title="Movie Details" id="OwV-Qi-pYQ">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="backButtonKey" value="   "/>
                         </userDefinedRuntimeAttributes>

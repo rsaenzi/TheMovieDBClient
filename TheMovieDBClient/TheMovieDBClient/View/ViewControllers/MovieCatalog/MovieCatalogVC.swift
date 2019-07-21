@@ -8,8 +8,21 @@
 
 import UIKit
 import Hero
+import RxSwift
+import RxCocoa
+import KVNProgress
 
 class MovieCatalogVC: UIViewController {
+    
+    // MARK: Presenter
+    private let presenter = MovieCatalogPresenter()
+    
+    // MARK: Bindings
+    private let bag = DisposeBag()
+}
+
+// MARK: Life Cycle
+extension MovieCatalogVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +31,13 @@ class MovieCatalogVC: UIViewController {
         let titleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         titleView.contentMode = .scaleAspectFit
         titleView.image = Image.AppIconWhite.image()
-        navigationItem.titleView = titleView   
+        navigationItem.titleView = titleView
     }
     
+    // TODO: Temporal
     @IBAction func onTapMovieInfo(_ sender: UIButton, forEvent event: UIEvent) {
         
-        let screen: MovieInfoVC = loadViewController()
+        let screen: MovieDetailsVC = loadViewController()
         navigationController?.pushViewController(screen, animated: true)
     }
 }
