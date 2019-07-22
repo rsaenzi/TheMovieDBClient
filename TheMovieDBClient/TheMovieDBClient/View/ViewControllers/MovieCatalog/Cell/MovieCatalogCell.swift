@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieCatalogCell: UICollectionViewCell {
     
@@ -37,9 +38,29 @@ class MovieCatalogCell: UICollectionViewCell {
 extension MovieCatalogCell {
     
     func setup(for movie: MovieResult) {
+        
         movieTitle.text = movie.title
         ratingLabel.text = String(movie.voteAverage)
         releaseDate.text = movie.releaseDate
+        
+        guard let imageUrl = movie.getPosterPathImage(),
+              let resourceUrl = URL(string: imageUrl) else {
+            
+            posterImage.image = Image.AppIconWhite.image()
+            return
+        }
+        
+        let placeholder = Image.AppIconWhite.image()
+        let resource = ImageResource(downloadURL: resourceUrl, cacheKey: imageUrl)
+        let options: [KingfisherOptionsInfoItem] = [.transition(.fade(0.5)), .cacheOriginalImage]
+        
+        posterImage.kf.setImage(
+            with: resource,
+            placeholder: placeholder,
+            options: options,
+            progressBlock: nil,
+            completionHandler: { _ in })
+        
     }
 }
 

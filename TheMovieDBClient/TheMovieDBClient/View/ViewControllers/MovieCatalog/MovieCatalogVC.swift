@@ -19,8 +19,9 @@ class MovieCatalogVC: UIViewController {
     @IBOutlet private var stateViews: [UIView]!
     @IBOutlet private weak var grid: UICollectionView!
     
-    // MARK: Grid Config
-    private let cellSize = UIScreen.main.bounds.width / 2
+    // MARK: Cell Size
+    private let cellWidth = UIScreen.main.bounds.width / 2
+    private let cellHeight = (UIScreen.main.bounds.width / 2) * 1.5
     
     // MARK: Presenter
     private let presenter = MovieCatalogPresenter()
@@ -116,7 +117,7 @@ extension MovieCatalogVC {
 extension MovieCatalogVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellSize, height: cellSize)
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -142,17 +143,8 @@ extension MovieCatalogVC: UICollectionViewDataSource {
         
         let cell: MovieCatalogCell = collectionView.dequeue(indexPath)
         let movie = presenter.getMovie(for: indexPath)
+        
         cell.setup(for: movie)
-
-        // Get the photo data from Url
-//        let photo = Model.shared.currentGallery[indexPath.row]
-//        guard let imageUrl = URL(string: photo.url),
-//            let imageData = try? Data(contentsOf: imageUrl),
-//            let image = UIImage(data: imageData) else {
-//                return cell
-//        }
-//
-//        cell.imagePhoto.image = image
         return cell
     }
 }
