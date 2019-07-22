@@ -52,13 +52,6 @@ extension MovieCatalogVC {
         super.viewWillAppear(animated)
         presenter.getPopularMovies()
     }
-    
-    // TODO: Temporal
-    @IBAction func onTapMovieInfo(_ sender: UIButton, forEvent event: UIEvent) {
-        
-        let screen: MovieDetailsVC = loadViewController()
-        navigationController?.pushViewController(screen, animated: true)
-    }
 }
 
 // MARK: Bindings
@@ -152,6 +145,11 @@ extension MovieCatalogVC: UICollectionViewDataSource {
 extension MovieCatalogVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Photo Selected")
+        
+        let screen: MovieDetailsVC = loadViewController()
+        let movie = presenter.getMovie(for: indexPath)
+        
+        screen.setup(for: movie)
+        navigationController?.pushViewController(screen, animated: true)
     }
 }

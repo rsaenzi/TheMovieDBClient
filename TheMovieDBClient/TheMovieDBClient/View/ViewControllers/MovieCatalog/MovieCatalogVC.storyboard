@@ -19,20 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1L5-Qm-zXv">
-                                <rect key="frame" x="107" y="379" width="200" height="50"/>
-                                <color key="backgroundColor" name="mainBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="agS-ew-9mZ"/>
-                                    <constraint firstAttribute="width" constant="200" id="xDl-ZB-o9d"/>
-                                </constraints>
-                                <state key="normal" title="Movie Details">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onTapMovieInfo:forEvent:" destination="twV-UN-inT" eventType="touchUpInside" id="XlK-hi-Thr"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riP-xp-FRP" userLabel="Container">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
@@ -165,18 +151,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="riP-xp-FRP" firstAttribute="top" secondItem="q0F-X7-9vt" secondAttribute="top" id="8OU-CH-FVo"/>
-                            <constraint firstItem="1L5-Qm-zXv" firstAttribute="centerX" secondItem="PG0-z5-iRG" secondAttribute="centerX" id="DB7-4p-JCw"/>
                             <constraint firstItem="q0F-X7-9vt" firstAttribute="trailing" secondItem="riP-xp-FRP" secondAttribute="trailing" id="OUC-Sa-Lwv"/>
                             <constraint firstAttribute="bottom" secondItem="riP-xp-FRP" secondAttribute="bottom" id="Y23-KN-CEe"/>
                             <constraint firstItem="riP-xp-FRP" firstAttribute="leading" secondItem="q0F-X7-9vt" secondAttribute="leading" id="shf-p6-8c7"/>
-                            <constraint firstItem="1L5-Qm-zXv" firstAttribute="centerY" secondItem="PG0-z5-iRG" secondAttribute="centerY" id="weD-v5-1Ha"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q0F-X7-9vt"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="1L5-Qm-zXv"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="RLj-LW-tCF">
                         <userDefinedRuntimeAttributes>
@@ -226,9 +205,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="mainBlue">
-            <color red="0.20392156862745098" green="0.53333333333333333" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="mainFucsia">
             <color red="0.74117647058823533" green="0.16862745098039217" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

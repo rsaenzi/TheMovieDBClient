@@ -27,6 +27,12 @@ extension MovieDetailsVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.getMovieDetails(for: 429617) // TODO: Spiderman
+        
+    }
+    
+    func setup(for movie: MovieResult) {
+        
+        // TODO Subscribe to presenter
+        presenter.getMovieDetails(for: movie.id)
     }
 }
