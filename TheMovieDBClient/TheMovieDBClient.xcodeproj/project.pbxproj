@@ -37,6 +37,8 @@
 		B123FEC422E501BE008B8D1D /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FEC322E501BE008B8D1D /* ProductionCompany.swift */; };
 		B123FEC622E501D4008B8D1D /* ProductionCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FEC522E501D4008B8D1D /* ProductionCountry.swift */; };
 		B123FEC822E501E3008B8D1D /* SpokenLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123FEC722E501E3008B8D1D /* SpokenLanguage.swift */; };
+		B12542A922E52CBA00249D88 /* MovieCatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12542A822E52CBA00249D88 /* MovieCatalogCell.swift */; };
+		B12542AB22E52CCC00249D88 /* MovieCatalogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12542AA22E52CCC00249D88 /* MovieCatalogCell.xib */; };
 		B137E92722E50A5400408B1C /* ApiCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137E92622E50A5400408B1C /* ApiCredentials.swift */; };
 		B137E92A22E510BD00408B1C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137E92922E510BD00408B1C /* Configuration.swift */; };
 		B137E92C22E5133600408B1C /* ConfigurationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137E92B22E5133600408B1C /* ConfigurationItem.swift */; };
@@ -112,6 +114,8 @@
 		B123FEC322E501BE008B8D1D /* ProductionCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
 		B123FEC522E501D4008B8D1D /* ProductionCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCountry.swift; sourceTree = "<group>"; };
 		B123FEC722E501E3008B8D1D /* SpokenLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpokenLanguage.swift; sourceTree = "<group>"; };
+		B12542A822E52CBA00249D88 /* MovieCatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogCell.swift; sourceTree = "<group>"; };
+		B12542AA22E52CCC00249D88 /* MovieCatalogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCatalogCell.xib; sourceTree = "<group>"; };
 		B137E92622E50A5400408B1C /* ApiCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCredentials.swift; sourceTree = "<group>"; };
 		B137E92922E510BD00408B1C /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		B137E92B22E5133600408B1C /* ConfigurationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationItem.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 		B112F04F22DE90F2004B56FA /* MovieCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				B12542A722E52CA600249D88 /* Cell */,
 				B194FA0522E2E5CF007F06F2 /* MovieCatalogVC.storyboard */,
 				B194FA0722E2E5D6007F06F2 /* MovieCatalogVC.swift */,
 			);
@@ -385,6 +390,15 @@
 				B123FEC722E501E3008B8D1D /* SpokenLanguage.swift */,
 			);
 			path = GetMovieDetails;
+			sourceTree = "<group>";
+		};
+		B12542A722E52CA600249D88 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B12542AA22E52CCC00249D88 /* MovieCatalogCell.xib */,
+				B12542A822E52CBA00249D88 /* MovieCatalogCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B137E92822E5109700408B1C /* GetConfiguration */ = {
@@ -593,6 +607,7 @@
 				B194FA0A22E2EA92007F06F2 /* MovieDetailsVC.storyboard in Resources */,
 				B123FEAE22E3CDB9008B8D1D /* Localizable.strings in Resources */,
 				B1040E3C22E2DCCD00E0D25A /* WelcomeVC.storyboard in Resources */,
+				B12542AB22E52CCC00249D88 /* MovieCatalogCell.xib in Resources */,
 				B1579BD022DE8BEB00C3FB8A /* LaunchScreen.storyboard in Resources */,
 				B1579BCD22DE8BEB00C3FB8A /* Assets.xcassets in Resources */,
 				B194FA0622E2E5CF007F06F2 /* MovieCatalogVC.storyboard in Resources */,
@@ -725,6 +740,7 @@
 				B161094422E13F7800AF58AD /* UICollectionView+Load.swift in Sources */,
 				B123FE9C22E3BCFA008B8D1D /* MovieCatalogPresenter.swift in Sources */,
 				B123FEBA22E3DD06008B8D1D /* GetMovieDetailsResponse.swift in Sources */,
+				B12542A922E52CBA00249D88 /* MovieCatalogCell.swift in Sources */,
 				B123FEC422E501BE008B8D1D /* ProductionCompany.swift in Sources */,
 				B137E93322E5200D00408B1C /* String+Extensions.swift in Sources */,
 				B1040E3E22E2DE0100E0D25A /* WelcomeVC.swift in Sources */,

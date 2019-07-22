@@ -12,6 +12,7 @@ class MovieCatalogPresenter {
     
     // MARK: Bindings
     let state = BehaviorSubject<MovieCatalogState>(value: .noData)
+    private var movies = [MovieResult]()
     
     // MARK: Interactors
     private let getConfigurationInteractor = GetConfigurationInteractor()
@@ -20,10 +21,21 @@ class MovieCatalogPresenter {
     // MARK: Bindings
     private let bag = DisposeBag()
     
-    
     // MARK: Life Cycle
     public init() {
         setupBindings()
+    }
+}
+
+// MARK: Bindings
+extension MovieCatalogPresenter {
+    
+    func getMoviesCount() -> Int {
+        return movies.count
+    }
+    
+    func getMovie(for indexPath: IndexPath) -> MovieResult {
+        return movies[indexPath.row]
     }
 }
 
@@ -95,7 +107,11 @@ extension MovieCatalogPresenter {
         switch response {
 
         case .success(let content):
-            state.onNext(.dataAvailable(movies: content.results))
+            
+            // Cache the movie list
+            movies = content.results
+            
+            state.onNext(.dataAvailable(movies: movies))
             
         case .unauthorizedError:
             state.onNext(.error(key: .movieCatalogCredentialsError))
