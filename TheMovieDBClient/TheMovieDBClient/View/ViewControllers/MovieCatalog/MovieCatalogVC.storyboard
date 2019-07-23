@@ -22,42 +22,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riP-xp-FRP" userLabel="Container">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
-                                    <view hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbN-2y-aXv" userLabel="StateNoData">
+                                    <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" restorationIdentifier="StateNoDataView" translatesAutoresizingMaskIntoConstraints="NO" id="MbN-2y-aXv" userLabel="StateNoData" customClass="StateNoDataView" customModule="TheMovieDBClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoData" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVm-h7-Etc">
-                                                <rect key="frame" x="178" y="393.5" width="58" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.98035818340000003" green="0.42788624759999999" blue="0.15458315610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="pVm-h7-Etc" firstAttribute="centerY" secondItem="MbN-2y-aXv" secondAttribute="centerY" id="dnv-G5-JnF"/>
-                                            <constraint firstItem="pVm-h7-Etc" firstAttribute="centerX" secondItem="MbN-2y-aXv" secondAttribute="centerX" id="t08-n9-LOj"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view hidden="YES" clipsSubviews="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-nP-Rdm" userLabel="StateFetchingData">
+                                    <view clipsSubviews="YES" tag="2" contentMode="scaleToFill" restorationIdentifier="StateFetchingDataView" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-nP-Rdm" userLabel="StateFetchingData" customClass="StateFetchingDataView" customModule="TheMovieDBClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FetchingData" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBA-zj-JsF">
-                                                <rect key="frame" x="155.5" y="393.5" width="103" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="MBA-zj-JsF" firstAttribute="centerY" secondItem="NjM-nP-Rdm" secondAttribute="centerY" id="SrK-KE-wjF"/>
-                                            <constraint firstItem="MBA-zj-JsF" firstAttribute="centerX" secondItem="NjM-nP-Rdm" secondAttribute="centerX" id="voM-bc-Mho"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view hidden="YES" clipsSubviews="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkE-Dd-cMb" userLabel="StateDataAvailable">
+                                    <view clipsSubviews="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkE-Dd-cMb" userLabel="StateDataAvailable">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k9z-TJ-H6E">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k9z-TJ-H6E">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LOs-ga-Qvp">
@@ -90,37 +66,13 @@
                                             <constraint firstItem="k9z-TJ-H6E" firstAttribute="top" secondItem="hkE-Dd-cMb" secondAttribute="top" id="thM-BB-2If"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" clipsSubviews="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ze4-yg-qfI" userLabel="StateNoInternet">
+                                    <view clipsSubviews="YES" tag="4" contentMode="scaleToFill" restorationIdentifier="StateNoInternetView" translatesAutoresizingMaskIntoConstraints="NO" id="Ze4-yg-qfI" userLabel="StateNoInternet" customClass="StateNoInternetView" customModule="TheMovieDBClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoInternet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGP-fm-RUj">
-                                                <rect key="frame" x="166" y="393.5" width="82" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="bGP-fm-RUj" firstAttribute="centerY" secondItem="Ze4-yg-qfI" secondAttribute="centerY" id="FFI-Lb-hF9"/>
-                                            <constraint firstItem="bGP-fm-RUj" firstAttribute="centerX" secondItem="Ze4-yg-qfI" secondAttribute="centerX" id="yLX-5g-eEF"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view hidden="YES" clipsSubviews="YES" tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09T-Bf-H7d" userLabel="StateError">
+                                    <view clipsSubviews="YES" tag="5" contentMode="scaleToFill" restorationIdentifier="StateErrorView" translatesAutoresizingMaskIntoConstraints="NO" id="09T-Bf-H7d" userLabel="StateError" customClass="StateErrorView" customModule="TheMovieDBClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpR-3E-ale">
-                                                <rect key="frame" x="188" y="393.5" width="38" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="dpR-3E-ale" firstAttribute="centerX" secondItem="09T-Bf-H7d" secondAttribute="centerX" id="29N-HQ-SJ0"/>
-                                            <constraint firstItem="dpR-3E-ale" firstAttribute="centerY" secondItem="09T-Bf-H7d" secondAttribute="centerY" id="k0D-Kx-gWu"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

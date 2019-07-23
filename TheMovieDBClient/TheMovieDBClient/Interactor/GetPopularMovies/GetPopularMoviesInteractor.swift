@@ -14,7 +14,7 @@ class GetPopularMoviesInteractor {
     
     let bindResponse = PublishSubject<GetPopularMoviesResponse>()
     
-    func request(page: Int? = nil) {
+    func request(page: Int) {
         
         let endpoint = ApiEndpoint.getPopularMovies(page: page)
         

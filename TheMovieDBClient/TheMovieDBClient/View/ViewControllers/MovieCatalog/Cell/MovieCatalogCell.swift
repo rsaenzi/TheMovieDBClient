@@ -32,6 +32,11 @@ class MovieCatalogCell: UICollectionViewCell {
         // Expand to fill its parent
         self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
+    
+    static func getNib() -> UINib {
+        let nibName = className(some: self)
+        return UINib(nibName: nibName, bundle: nil)
+    }
 }
 
 // MARK: Data
@@ -64,14 +69,9 @@ extension MovieCatalogCell {
     }
 }
 
-// MARK: Identification
+// MARK: TableView
 extension MovieCatalogCell {
-    
-    static func getNib() -> UINib {
-        let nibName = className(some: self)
-        return UINib(nibName: nibName, bundle: nil)
-    }
-    
+
     static func getReuseIdentifier() -> String {
         return className(some: self)
     }

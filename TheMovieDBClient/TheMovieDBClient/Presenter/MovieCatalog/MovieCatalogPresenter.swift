@@ -21,13 +21,18 @@ class MovieCatalogPresenter {
     // MARK: Bindings
     private let bag = DisposeBag()
     
+    // MARK: Pagination
+    private var currentPage = 1
+    private var totalPages = 1
+    private var fetchingPage = false
+    
     // MARK: Life Cycle
     public init() {
         setupBindings()
     }
 }
 
-// MARK: Bindings
+// MARK: Getters
 extension MovieCatalogPresenter {
     
     func getMoviesCount() -> Int {
@@ -62,8 +67,41 @@ extension MovieCatalogPresenter {
 extension MovieCatalogPresenter {
 
     func getPopularMovies() {
+        
         state.onNext(.fetchingData)
-        getConfigurationInteractor.request()
+        
+        movies = []
+        currentPage = 1
+        
+        fetchingPage = true
+        
+        if needsConfig() {
+            getConfigurationInteractor.request()
+        } else {
+            getPopularMoviesInteractor.request(page: currentPage)
+        }
+    }
+    
+    func loadNextPage() {
+        
+        // Prevents calling the endpoint multiple times for the same page...
+        if fetchingPage {
+            return
+        }
+        
+        // Prevents calling more pages than available...
+        currentPage += 1
+        if currentPage > totalPages {
+            return
+        }
+        
+        fetchingPage = true
+        
+        if needsConfig() {
+            getConfigurationInteractor.request()
+        } else {
+            getPopularMoviesInteractor.request(page: currentPage)
+        }
     }
 }
 
@@ -86,7 +124,7 @@ extension MovieCatalogPresenter {
             ApiCredentials.imageProfileSize = getSmallestValue(from: content.images.profileSizes)
             ApiCredentials.imageStillSize = getSmallestValue(from: content.images.stillSizes)
             
-            getPopularMoviesInteractor.request()
+            getPopularMoviesInteractor.request(page: currentPage)
             
         case .unauthorizedError:
             state.onNext(.error(key: .movieCatalogCredentialsError))
@@ -108,8 +146,15 @@ extension MovieCatalogPresenter {
 
         case .success(let content):
             
-            // Cache the movie list
-            movies = content.results
+            // Save fetched movies
+            if currentPage == 1 {
+                movies = content.results
+            } else {
+                movies.append(contentsOf: content.results)
+            }
+            
+            totalPages = content.totalPages
+            fetchingPage = false
             
             state.onNext(.dataAvailable(movies: movies))
             
@@ -145,5 +190,18 @@ extension MovieCatalogPresenter {
         }
         
         return "w\(min)"
+    }
+    
+    private func needsConfig() -> Bool {
+        
+        guard let _ = ApiCredentials.imageBaseUrl,
+              let _ = ApiCredentials.imageBackdropSize,
+              let _ = ApiCredentials.imageLogoSize,
+              let _ = ApiCredentials.imagePosterSize,
+              let _ = ApiCredentials.imageProfileSize,
+              let _ = ApiCredentials.imageStillSize else {
+            return true
+        }
+        return false
     }
 }

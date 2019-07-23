@@ -20,7 +20,7 @@ enum ApiEndpoint {
      Get a list of the current popular movies on TMDb. This list updates daily.
      https://developers.themoviedb.org/3/movies/get-popular-movies
      */
-    case getPopularMovies(page: Int?)
+    case getPopularMovies(page: Int)
     
     /*
      Get the primary information about a movie.
@@ -82,10 +82,7 @@ extension ApiEndpoint: TargetType {
                 encoding: URLEncoding.queryString)
             
         case .getPopularMovies(let page):
-            
-            if let validPage = page {
-                parameters["page"] = validPage
-            }
+            parameters["page"] = page
             
             return .requestParameters(
                 parameters: parameters,

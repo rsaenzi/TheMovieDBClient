@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StateErrorView" customModule="TheMovieDBClient" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="dai-t8-FSl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2R-vF-Aq7" userLabel="CenterView">
+                    <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ErrorWhite" translatesAutoresizingMaskIntoConstraints="NO" id="3DX-3o-mwg">
+                            <rect key="frame" x="90" y="27.5" width="234.5" height="234.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3DX-3o-mwg" secondAttribute="height" multiplier="1:1" id="IV1-aF-q8R"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-iW-BzM">
+                            <rect key="frame" x="16" y="327" width="382" height="50"/>
+                            <color key="backgroundColor" name="mainBlue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="fff-Id-E6L"/>
+                            </constraints>
+                            <state key="normal" title="Try Again">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error has occured, please try again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWv-sK-JY0">
+                            <rect key="frame" x="16" y="279.5" width="382" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fh3-iW-BzM" firstAttribute="leading" secondItem="c2R-vF-Aq7" secondAttribute="leading" constant="16" id="FjJ-PE-Oz2"/>
+                        <constraint firstItem="fh3-iW-BzM" firstAttribute="centerY" secondItem="c2R-vF-Aq7" secondAttribute="centerY" multiplier="1.7" id="H1n-Ko-VjC"/>
+                        <constraint firstItem="3DX-3o-mwg" firstAttribute="centerY" secondItem="c2R-vF-Aq7" secondAttribute="centerY" multiplier="0.7" id="Ifa-wp-yf7"/>
+                        <constraint firstAttribute="trailing" secondItem="fh3-iW-BzM" secondAttribute="trailing" constant="16" id="SAO-BB-koA"/>
+                        <constraint firstAttribute="trailing" secondItem="AWv-sK-JY0" secondAttribute="trailing" constant="16" id="SFM-4r-Yqz"/>
+                        <constraint firstItem="AWv-sK-JY0" firstAttribute="centerY" secondItem="c2R-vF-Aq7" secondAttribute="centerY" multiplier="1.4" id="Uom-Dy-Iej"/>
+                        <constraint firstAttribute="width" secondItem="c2R-vF-Aq7" secondAttribute="height" multiplier="1:1" id="V9L-8E-dwe"/>
+                        <constraint firstItem="3DX-3o-mwg" firstAttribute="centerX" secondItem="c2R-vF-Aq7" secondAttribute="centerX" id="Vvt-su-hWQ"/>
+                        <constraint firstItem="AWv-sK-JY0" firstAttribute="centerX" secondItem="c2R-vF-Aq7" secondAttribute="centerX" id="hHW-0J-Kpv"/>
+                        <constraint firstItem="AWv-sK-JY0" firstAttribute="leading" secondItem="c2R-vF-Aq7" secondAttribute="leading" constant="16" id="kUt-Uf-Cew"/>
+                        <constraint firstItem="fh3-iW-BzM" firstAttribute="centerX" secondItem="c2R-vF-Aq7" secondAttribute="centerX" id="mqA-kA-U9U"/>
+                        <constraint firstItem="3DX-3o-mwg" firstAttribute="width" secondItem="c2R-vF-Aq7" secondAttribute="width" multiplier="0.5" constant="27.5" id="xnF-RD-X7C"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" name="mainFucsia"/>
+            <constraints>
+                <constraint firstItem="c2R-vF-Aq7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="90s-Q9-G94"/>
+                <constraint firstItem="c2R-vF-Aq7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZfY-F2-T3N"/>
+                <constraint firstItem="c2R-vF-Aq7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kYs-Iv-lNg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ErrorWhite" width="400" height="400"/>
+        <namedColor name="mainBlue">
+            <color red="0.20392156862745098" green="0.53333333333333333" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainFucsia">
+            <color red="0.74117647058823533" green="0.16862745098039217" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

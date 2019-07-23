@@ -152,4 +152,12 @@ extension MovieCatalogVC: UICollectionViewDelegate {
         screen.setup(for: movie)
         navigationController?.pushViewController(screen, animated: true)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        // If last cell is about to be displayed...
+        if indexPath.row == presenter.getMoviesCount() - 4 {
+            presenter.loadNextPage()
+        }
+    }
 }
