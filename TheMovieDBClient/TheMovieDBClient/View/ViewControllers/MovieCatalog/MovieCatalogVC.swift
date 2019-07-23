@@ -16,12 +16,13 @@ class MovieCatalogVC: UIViewController {
     
     // MARK: Outlets
     @IBOutlet private weak var stateContainer: UIView!
-    @IBOutlet private var stateViews: [UIView]!
     @IBOutlet private weak var grid: UICollectionView!
+    @IBOutlet private var stateViews: [UIView]!
     
     // MARK: Cell Size
-    private let cellWidth = UIScreen.main.bounds.width / 3
-    private let cellHeight = (UIScreen.main.bounds.width / 3) * 1.5
+    private static let itemsPerRow: CGFloat = 3
+    private let cellWidth = UIScreen.main.bounds.width / MovieCatalogVC.itemsPerRow
+    private let cellHeight = (UIScreen.main.bounds.width / MovieCatalogVC.itemsPerRow) * 1.5
     
     // MARK: Presenter
     private let presenter = MovieCatalogPresenter()

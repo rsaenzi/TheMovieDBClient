@@ -48,24 +48,23 @@ extension MovieCatalogCell {
         ratingLabel.text = String(movie.voteAverage)
         releaseDate.text = String(movie.releaseDate.prefix(4))
         
-        guard let imageUrl = movie.getPosterPathImage(),
-              let resourceUrl = URL(string: imageUrl) else {
+        guard let posterImageUrl = movie.getPosterPathImage(),
+              let posterResourceUrl = URL(string: posterImageUrl) else {
             
             posterImage.image = Image.AppIconWhite.image()
             return
         }
         
-        let placeholder = Image.AppIconWhite.image()
-        let resource = ImageResource(downloadURL: resourceUrl, cacheKey: imageUrl)
+        let posterPlaceholder = Image.AppIconWhite.image()
+        let posterResource = ImageResource(downloadURL: posterResourceUrl, cacheKey: posterImageUrl)
         let options: [KingfisherOptionsInfoItem] = [.transition(.fade(0.5)), .cacheOriginalImage]
         
         posterImage.kf.setImage(
-            with: resource,
-            placeholder: placeholder,
+            with: posterResource,
+            placeholder: posterPlaceholder,
             options: options,
             progressBlock: nil,
             completionHandler: { _ in })
-        
     }
 }
 

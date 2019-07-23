@@ -11,11 +11,21 @@ import Hero
 import RxSwift
 import RxCocoa
 import KVNProgress
+import Kingfisher
 
 class MovieDetailsVC: UIViewController {
     
+    // MARK: Outlets
+    @IBOutlet private weak var backdropImage: UIImageView!
+    @IBOutlet private weak var posterImage: UIImageView!
+    
+    
+    
     // MARK: Presenter
     private let presenter = MovieDetailsPresenter()
+    
+    // MARK: Data
+    private var movie: MovieResult?
     
     // MARK: Bindings
     private let bag = DisposeBag()
@@ -24,15 +34,46 @@ class MovieDetailsVC: UIViewController {
 // MARK: Life Cycle
 extension MovieDetailsVC {
     
+    func setup(for movie: MovieResult) {
+        self.movie = movie
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    }
-    
-    func setup(for movie: MovieResult) {
-        
         // TODO Subscribe to presenter
-        presenter.getMovieDetails(for: movie.id)
+//        presenter.getMovieDetails(for: movie.id)
+        
+        guard let backdropImageUrl = movie?.getBackdropPathImage(),
+              let backdropResourceUrl = URL(string: backdropImageUrl),
+              let posterImageUrl = movie?.getPosterPathImage(),
+              let posterResourceUrl = URL(string: posterImageUrl) else {
+                
+            backdropImage.image = Image.AppIconWhite.image()
+            posterImage.image = Image.AppIconWhite.image()
+            return
+        }
+        
+        let backdropPlaceholder = Image.AppIconWhite.image()
+        let backdropResource = ImageResource(downloadURL: backdropResourceUrl, cacheKey: backdropImageUrl)
+        
+        let posterPlaceholder = Image.AppIconWhite.image()
+        let posterResource = ImageResource(downloadURL: posterResourceUrl, cacheKey: posterImageUrl)
+        
+        let options: [KingfisherOptionsInfoItem] = [.transition(.fade(0.5)), .cacheOriginalImage]
+        
+        backdropImage.kf.setImage(
+            with: backdropResource,
+            placeholder: backdropPlaceholder,
+            options: options,
+            progressBlock: nil,
+            completionHandler: { _ in })
+        
+        posterImage.kf.setImage(
+            with: posterResource,
+            placeholder: posterPlaceholder,
+            options: options,
+            progressBlock: nil,
+            completionHandler: { _ in })
     }
 }

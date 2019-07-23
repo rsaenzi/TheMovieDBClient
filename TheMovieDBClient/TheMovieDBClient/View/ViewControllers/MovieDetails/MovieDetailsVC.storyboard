@@ -14,10 +14,66 @@
         <scene sceneID="hVr-5W-lV4">
             <objects>
                 <viewController storyboardIdentifier="MovieDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L62-JP-ez9" customClass="MovieDetailsVC" customModule="TheMovieDBClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3QH-hH-Fdk">
+                    <view key="view" contentMode="scaleToFill" id="3QH-hH-Fdk" userLabel="Screen">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvh-bh-OJ9" userLabel="Content">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ms0-B2-BNS" userLabel="Header">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-P2-mM0">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="hZ6-P2-mM0" secondAttribute="bottom" id="0Ms-Mv-eQM"/>
+                                            <constraint firstItem="hZ6-P2-mM0" firstAttribute="top" secondItem="ms0-B2-BNS" secondAttribute="top" id="brn-6e-KHz"/>
+                                            <constraint firstAttribute="trailing" secondItem="hZ6-P2-mM0" secondAttribute="trailing" id="k92-jw-dxd"/>
+                                            <constraint firstItem="hZ6-P2-mM0" firstAttribute="leading" secondItem="ms0-B2-BNS" secondAttribute="leading" id="qT8-ix-ZcK"/>
+                                            <constraint firstAttribute="width" secondItem="ms0-B2-BNS" secondAttribute="height" multiplier="16:9" id="w5E-65-VIw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFo-lV-8C0" userLabel="Title">
+                                        <rect key="frame" x="0.0" y="116.5" width="414" height="233"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TNM-4N-yFe">
+                                                <rect key="frame" x="26" y="0.0" width="155" height="233"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TNM-4N-yFe" secondAttribute="height" multiplier="1:1.5" id="8kt-qD-8k0"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="TNM-4N-yFe" secondAttribute="bottom" id="Kyp-C6-AcW"/>
+                                            <constraint firstItem="TNM-4N-yFe" firstAttribute="top" secondItem="cFo-lV-8C0" secondAttribute="top" id="MWi-ma-jFr"/>
+                                            <constraint firstItem="TNM-4N-yFe" firstAttribute="centerX" secondItem="cFo-lV-8C0" secondAttribute="centerX" multiplier="0.5" id="wPR-pv-3lp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ms0-B2-BNS" firstAttribute="top" secondItem="Dvh-bh-OJ9" secondAttribute="top" id="9Ke-wf-qLd"/>
+                                    <constraint firstItem="cFo-lV-8C0" firstAttribute="centerY" secondItem="ms0-B2-BNS" secondAttribute="bottom" id="9cM-nn-qe8"/>
+                                    <constraint firstAttribute="trailing" secondItem="ms0-B2-BNS" secondAttribute="trailing" id="FdA-49-i9X"/>
+                                    <constraint firstAttribute="trailing" secondItem="cFo-lV-8C0" secondAttribute="trailing" id="KyD-8g-nDN"/>
+                                    <constraint firstItem="ms0-B2-BNS" firstAttribute="leading" secondItem="Dvh-bh-OJ9" secondAttribute="leading" id="MDB-1d-4o8"/>
+                                    <constraint firstItem="cFo-lV-8C0" firstAttribute="height" secondItem="ms0-B2-BNS" secondAttribute="height" id="Xsx-xd-jpc"/>
+                                    <constraint firstItem="cFo-lV-8C0" firstAttribute="leading" secondItem="Dvh-bh-OJ9" secondAttribute="leading" id="ZCg-O6-DQC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dvh-bh-OJ9" firstAttribute="trailing" secondItem="Tuu-hG-7j8" secondAttribute="trailing" id="KaE-2Y-Hhn"/>
+                            <constraint firstAttribute="bottom" secondItem="Dvh-bh-OJ9" secondAttribute="bottom" id="rqE-Zh-JLe"/>
+                            <constraint firstItem="Dvh-bh-OJ9" firstAttribute="top" secondItem="Tuu-hG-7j8" secondAttribute="top" id="scr-6p-MMH"/>
+                            <constraint firstItem="Dvh-bh-OJ9" firstAttribute="leading" secondItem="Tuu-hG-7j8" secondAttribute="leading" id="wDH-Q8-EEe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tuu-hG-7j8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movie Details" id="OwV-Qi-pYQ">
@@ -26,10 +82,14 @@
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="backdropImage" destination="hZ6-P2-mM0" id="S38-ra-MrW"/>
+                        <outlet property="posterImage" destination="TNM-4N-yFe" id="yoY-Az-6fN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znt-W0-WYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="32"/>
+            <point key="canvasLocation" x="66.666666666666671" y="31.473214285714285"/>
         </scene>
     </scenes>
     <color key="tintColor" name="mainFucsia"/>
