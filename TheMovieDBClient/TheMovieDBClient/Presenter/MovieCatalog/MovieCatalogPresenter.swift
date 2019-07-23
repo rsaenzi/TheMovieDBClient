@@ -68,12 +68,21 @@ extension MovieCatalogPresenter {
 
     func getMoviesFirstPage() {
         
-        state.onNext(.fetchingData)
+        // Prevents calling the endpoint multiple times for the same page...
+        if fetchingPage {
+            return
+        }
+        
+        // Prevents to call the first page multiple times...
+        if movies.count > 0 {
+            return
+        }
         
         movies = []
         currentPage = 1
         
         fetchingPage = true
+        state.onNext(.fetchingData)
         
         if needsConfig() {
             getConfigurationInteractor.request()
@@ -146,11 +155,21 @@ extension MovieCatalogPresenter {
 
         case .success(let content):
             
+            // Remove any movie that does not have poster or backdrop images
+            let newMovies = content.results.filter { movieItem -> Bool in
+                
+                guard let _ = movieItem.getBackdropPathImage(),
+                      let _ = movieItem.getPosterPathImage() else {
+                    return false
+                }
+                return true
+            }
+            
             // Save fetched movies
             if currentPage == 1 {
-                movies = content.results
+                movies = newMovies
             } else {
-                movies.append(contentsOf: content.results)
+                movies.append(contentsOf: newMovies)
             }
             
             totalPages = content.totalPages
