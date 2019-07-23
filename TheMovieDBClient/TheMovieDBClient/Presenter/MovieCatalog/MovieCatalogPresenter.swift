@@ -66,7 +66,7 @@ extension MovieCatalogPresenter {
 // MARK: Actions
 extension MovieCatalogPresenter {
 
-    func getPopularMovies() {
+    func getMoviesFirstPage() {
         
         state.onNext(.fetchingData)
         
@@ -82,7 +82,7 @@ extension MovieCatalogPresenter {
         }
     }
     
-    func loadNextPage() {
+    func getMoviesNextPage() {
         
         // Prevents calling the endpoint multiple times for the same page...
         if fetchingPage {

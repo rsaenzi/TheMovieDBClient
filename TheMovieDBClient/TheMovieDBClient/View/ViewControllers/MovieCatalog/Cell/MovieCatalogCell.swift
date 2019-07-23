@@ -46,7 +46,7 @@ extension MovieCatalogCell {
         
         movieTitle.text = movie.title
         ratingLabel.text = String(movie.voteAverage)
-        releaseDate.text = movie.releaseDate
+        releaseDate.text = String(movie.releaseDate.prefix(4))
         
         guard let imageUrl = movie.getPosterPathImage(),
               let resourceUrl = URL(string: imageUrl) else {

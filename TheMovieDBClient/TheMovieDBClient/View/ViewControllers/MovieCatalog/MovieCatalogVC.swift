@@ -20,8 +20,8 @@ class MovieCatalogVC: UIViewController {
     @IBOutlet private weak var grid: UICollectionView!
     
     // MARK: Cell Size
-    private let cellWidth = UIScreen.main.bounds.width / 2
-    private let cellHeight = (UIScreen.main.bounds.width / 2) * 1.5
+    private let cellWidth = UIScreen.main.bounds.width / 3
+    private let cellHeight = (UIScreen.main.bounds.width / 3) * 1.5
     
     // MARK: Presenter
     private let presenter = MovieCatalogPresenter()
@@ -50,7 +50,7 @@ extension MovieCatalogVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.getPopularMovies()
+        presenter.getMoviesFirstPage()
     }
 }
 
@@ -155,9 +155,9 @@ extension MovieCatalogVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        // If last cell is about to be displayed...
-        if indexPath.row == presenter.getMoviesCount() - 4 {
-            presenter.loadNextPage()
+        // If last cells are about to be displayed, next page of movies is requested
+        if indexPath.row == presenter.getMoviesCount() - 5 {
+            presenter.getMoviesNextPage()
         }
     }
 }
