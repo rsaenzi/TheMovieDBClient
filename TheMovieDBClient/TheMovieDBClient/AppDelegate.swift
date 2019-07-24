@@ -8,6 +8,7 @@
 
 import UIKit
 import KVNProgress
+import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        KVNProgressConfiguration().minimumErrorDisplayTime = 2.5
+        ImageCache.default.diskStorage.config.expiration = StorageExpiration.never
+        ImageCache.default.diskStorage.config.sizeLimit = 0
+        ImageDownloader.default.downloadTimeout = 30.0
+        
+        KVNProgressConfiguration().minimumErrorDisplayTime = 2.0
         
         UIApplication.shared.delegate?.window??.tintColor = Color.mainFucsia.color()
         UITabBar.appearance().tintColor = Color.mainFucsia.color()

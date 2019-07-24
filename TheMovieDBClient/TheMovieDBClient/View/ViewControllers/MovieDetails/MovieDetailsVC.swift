@@ -18,14 +18,16 @@ class MovieDetailsVC: UIViewController {
     // MARK: Outlets
     @IBOutlet private weak var backdropImage: UIImageView!
     @IBOutlet private weak var posterImage: UIImageView!
-    
-    
+    @IBOutlet private weak var movieTitle: UILabel!
+    @IBOutlet private weak var rating: UILabel!
+    @IBOutlet private weak var releaseDate: UILabel!
+    @IBOutlet private weak var overview: UILabel!
     
     // MARK: Presenter
     private let presenter = MovieDetailsPresenter()
     
     // MARK: Data
-    private var movie: MovieResult?
+    private var movie: MovieResult!
     
     // MARK: Bindings
     private let bag = DisposeBag()
@@ -43,6 +45,12 @@ extension MovieDetailsVC {
         
         // TODO Subscribe to presenter
 //        presenter.getMovieDetails(for: movie.id)
+        
+        title = movie.title
+        movieTitle.text = movie.title
+        rating.text = String(movie.voteAverage)
+        releaseDate.text = String(movie.releaseDate)
+        overview.text = movie.overview
         
         guard let backdropImageUrl = movie?.getBackdropPathImage(),
               let backdropResourceUrl = URL(string: backdropImageUrl),

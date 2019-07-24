@@ -26,6 +26,9 @@ class MovieCatalogPresenter {
     private var totalPages = 1
     private var fetchingPage = false
     
+    // MARK: Image Quality
+    private let useLowResImages = true
+    
     // MARK: Life Cycle
     public init() {
         setupBindings()
@@ -127,11 +130,11 @@ extension MovieCatalogPresenter {
             ApiCredentials.imageBaseUrl = content.images.secureBaseUrl
             
             // To improve performance we choose the smallest Image Size value
-            ApiCredentials.imageBackdropSize = getSmallestValue(from: content.images.backdropSizes)
-            ApiCredentials.imageLogoSize = getSmallestValue(from: content.images.logoSizes)
-            ApiCredentials.imagePosterSize = getSmallestValue(from: content.images.posterSizes)
-            ApiCredentials.imageProfileSize = getSmallestValue(from: content.images.profileSizes)
-            ApiCredentials.imageStillSize = getSmallestValue(from: content.images.stillSizes)
+            ApiCredentials.imageBackdropSize = getSmallSize(from: content.images.backdropSizes)
+            ApiCredentials.imageLogoSize = getSmallSize(from: content.images.logoSizes)
+            ApiCredentials.imagePosterSize = getSmallSize(from: content.images.posterSizes)
+            ApiCredentials.imageProfileSize = getSmallSize(from: content.images.profileSizes)
+            ApiCredentials.imageStillSize = getSmallSize(from: content.images.stillSizes)
             
             getPopularMoviesInteractor.request(page: currentPage)
             
@@ -191,23 +194,41 @@ extension MovieCatalogPresenter {
         }
     }
     
-    private func getSmallestValue(from stringValues: [String]) -> String {
+    private func getSmallSize(from stringSizes: [String]) -> String {
         
-        let intValues = stringValues
-            .map { sizeItem -> String in
-                return sizeItem.removeNonNumericCharacters()
+        let intSizes = stringSizes
+            
+            // Remove non numeric chars
+            .map { item -> String in
+                return item.removeNonNumericCharacters()
                 
+            // Remove empty strings
             }.filter { item -> Bool in
                 return item.count > 0
                 
+            // Convert to an array of Ints
             }.map { item -> Int in
                 return Int(item)!
+            
+            // Sort them in ascending order
+            }.sorted { first, second -> Bool in
+                return first < second
             }
         
-        guard let min = intValues.min() else {
-            return ""
+        if useLowResImages == false {
+
+            // First we try to get the size next to the smallest one...
+            if intSizes.count >= 2 {
+                
+                let selectedSize = intSizes[intSizes.count - 2]
+                return "w\(selectedSize)"
+            }
         }
         
+        // If not possible, we choose the smallest size
+        guard let min = intSizes.min() else {
+            return ""
+        }
         return "w\(min)"
     }
     
