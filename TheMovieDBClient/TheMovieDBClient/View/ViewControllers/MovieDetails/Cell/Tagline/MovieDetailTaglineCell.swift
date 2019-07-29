@@ -14,7 +14,7 @@ class MovieDetailTaglineCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    
+    @IBOutlet weak var taglineLabel: UILabel!
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,13 +40,16 @@ class MovieDetailTaglineCell: UITableViewCell {
         // Expand to fill its parent
         allContentView.frame = self.bounds
         allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        // This prevent the cell to change its color when selected
+        selectionStyle = .none
     }
 }
 
 // MARK: Data
 extension MovieDetailTaglineCell {
     
-    func setup(tagline: String?) {
-        self.selectionStyle = .none
+    func setup(tagline: String) {
+        taglineLabel.text = tagline
     }
 }

@@ -14,7 +14,7 @@ class MovieDetailImdbCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    
+    @IBOutlet weak var imdbUrlLabel: UILabel!
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,13 +40,16 @@ class MovieDetailImdbCell: UITableViewCell {
         // Expand to fill its parent
         allContentView.frame = self.bounds
         allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        // This prevent the cell to change its color when selected
+        selectionStyle = .none
     }
 }
 
 // MARK: Data
 extension MovieDetailImdbCell {
     
-    func setup(imdbId: String?) {
-        self.selectionStyle = .none
+    func setup(imdbId: String) {
+        imdbUrlLabel.text = "\(ApiCredentials.imdbUrl)\(imdbId)"
     }
 }

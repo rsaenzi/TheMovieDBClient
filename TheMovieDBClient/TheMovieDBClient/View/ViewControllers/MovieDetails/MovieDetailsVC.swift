@@ -33,6 +33,7 @@ extension MovieDetailsVC {
     
     func setup(for movie: MovieResult) {
         self.movie = movie
+        title = movie.title
         presenter = MovieDetailsPresenter(movie: movie)
     }
     
@@ -82,6 +83,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         table.register(MovieDetailProductionCell.self, forCellReuseIdentifier: MovieDetailProductionCell.getReuseIdentifier())
         table.register(MovieDetailCountryCell.self, forCellReuseIdentifier: MovieDetailCountryCell.getReuseIdentifier())
         table.register(MovieDetailRevenueCell.self, forCellReuseIdentifier: MovieDetailRevenueCell.getReuseIdentifier())
+        table.register(MovieDetailBudgetCell.self, forCellReuseIdentifier: MovieDetailBudgetCell.getReuseIdentifier())
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,7 +94,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
 
         case .header(let title, let backdropImage, let posterImage):
             let cell: MovieDetailHeaderCell = tableView.dequeue(indexPath)
-            cell.setup(title: title, backdropImage: backdropImage, posterImage: posterImage)
+            cell.setup(title: title, backdropUrl: backdropImage, posterUrl: posterImage)
             return cell
 
         case .rating(let rating, let releaseDate):
@@ -140,9 +142,14 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             cell.setup(country: country)
             return cell
             
-        case .revenue(let budget, let revenue):
+        case .revenue(let revenue):
             let cell: MovieDetailRevenueCell = tableView.dequeue(indexPath)
-            cell.setup(budget: budget, revenue: revenue)
+            cell.setup(revenue: revenue)
+            return cell
+            
+        case .budget(let budget):
+            let cell: MovieDetailBudgetCell = tableView.dequeue(indexPath)
+            cell.setup(budget: budget)
             return cell
         }
     }
@@ -157,34 +164,37 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             return UIScreen.main.bounds.width * 0.8
             
         case .rating:
-            return 50
+            return 45
             
         case .tagline:
             return 50
             
         case .overview:
-            return 50
+            return 100 // TODO Calculate
             
         case .homepage:
-            return 50
+            return 40
             
         case .imdb:
-            return 50
+            return 40
             
         case .genre:
-            return 50
+            return 40 // TODO Calculate
             
         case .original:
-            return 50
+            return 40 // TODO Calculate
             
         case .production:
-            return 50
+            return 40 // TODO Calculate
             
         case .country:
-            return 50
+            return 40 // TODO Calculate
             
         case .revenue:
-            return 50
+            return 40 // TODO Calculate
+            
+        case .budget:
+            return 40 // TODO Calculate
         }
     }
     
@@ -224,55 +234,9 @@ extension MovieDetailsVC {
     
     private func open(imdbId: String?) {
 
-        if let id = imdbId, let url = URL(string: "https://m.imdb.com/title/\(id)"),
+        if let id = imdbId, let url = URL(string: "\(ApiCredentials.imdbUrl)\(id)"),
             UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
-//    private func loadMainInfo(from movie: MovieResult) {
-//
-//        title = movie.title
-//        movieTitle.text = movie.title
-//        rating.text = String(movie.voteAverage)
-//        releaseDate.text = String(movie.releaseDate)
-//        overview.text = movie.overview
-//
-//        guard let backdropImageUrl = movie.getBackdropPathImage(),
-//            let backdropResourceUrl = URL(string: backdropImageUrl),
-//            let posterImageUrl = movie.getPosterPathImage(),
-//            let posterResourceUrl = URL(string: posterImageUrl) else {
-//
-//                backdropImage.image = Image.AppIconWhite.image()
-//                posterImage.image = Image.AppIconWhite.image()
-//                return
-//        }
-//
-//        let backdropPlaceholder = Image.AppIconWhite.image()
-//        let backdropResource = ImageResource(downloadURL: backdropResourceUrl, cacheKey: backdropImageUrl)
-//
-//        let posterPlaceholder = Image.AppIconWhite.image()
-//        let posterResource = ImageResource(downloadURL: posterResourceUrl, cacheKey: posterImageUrl)
-//
-//        let options: [KingfisherOptionsInfoItem] = [.transition(.fade(0.5)), .cacheOriginalImage]
-//
-//        backdropImage.kf.setImage(
-//            with: backdropResource,
-//            placeholder: backdropPlaceholder,
-//            options: options,
-//            progressBlock: nil,
-//            completionHandler: { _ in })
-//
-//        posterImage.kf.setImage(
-//            with: posterResource,
-//            placeholder: posterPlaceholder,
-//            options: options,
-//            progressBlock: nil,
-//            completionHandler: { _ in })
-//    }
-    
-//    private func loadOptionalInfo(from movie: MovieDetails) {
-//
-//        tagline.text = movie.tagline
-//    }
 }

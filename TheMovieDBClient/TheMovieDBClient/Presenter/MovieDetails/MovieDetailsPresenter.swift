@@ -46,10 +46,21 @@ extension MovieDetailsPresenter {
     
     private func loadDetails(from movie: MovieDetails) {
         
-        detailItems.append(.tagline(tagline: movie.tagline))
-        detailItems.append(.overview(overview: movie.overview))
-        detailItems.append(.homepage(homepage: movie.homepage))
-        detailItems.append(.imdb(imdbId: movie.imdbId))
+        if let tagline = movie.tagline, tagline.count > 0 {
+            detailItems.append(.tagline(tagline: tagline))
+        }
+
+        if let homepage = movie.homepage, homepage.count > 0 {
+            detailItems.append(.homepage(homepage: homepage))
+        }
+        
+        if let overview = movie.overview, overview.count > 0 {
+            detailItems.append(.overview(overview: overview))
+        }
+        
+        if let imdbId = movie.imdbId, imdbId.count > 0 {
+            detailItems.append(.imdb(imdbId: imdbId))
+        }
 
         for genre in movie.genres {
             detailItems.append(.genre(genre: genre))
@@ -65,7 +76,8 @@ extension MovieDetailsPresenter {
             detailItems.append(.country(country: country))
         }
 
-        detailItems.append(.revenue(budget: movie.budget, revenue: movie.revenue))
+        detailItems.append(.revenue(revenue: movie.revenue))
+        detailItems.append(.budget(budget: movie.budget))
     }
 }
 

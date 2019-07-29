@@ -14,7 +14,8 @@ class MovieDetailRatingCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    
+    @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,6 +41,9 @@ class MovieDetailRatingCell: UITableViewCell {
         // Expand to fill its parent
         allContentView.frame = self.bounds
         allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        // This prevent the cell to change its color when selected
+        selectionStyle = .none
     }
 }
 
@@ -47,6 +51,8 @@ class MovieDetailRatingCell: UITableViewCell {
 extension MovieDetailRatingCell {
     
     func setup(rating: Float, releaseDate: String) {
-        self.selectionStyle = .none
+        
+        ratingLabel.text = String(rating)
+        releaseDateLabel.text = releaseDate
     }
 }

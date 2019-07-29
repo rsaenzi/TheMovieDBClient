@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailBudgetCell" customModule="TheMovieDBClient" customModuleProvider="target">
+            <connections>
+                <outlet property="allContentView" destination="1wY-bb-D39" id="vVl-cA-ygc"/>
+                <outlet property="budgetLabel" destination="0Fu-Ul-kK5" id="hdv-9b-ce5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="1wY-bb-D39">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZv-fJ-GbU" userLabel="Content">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylv-8f-Kd7">
+                            <rect key="frame" x="25" y="0.0" width="350" height="44"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="QcL-oa-NGs">
+                                    <rect key="frame" x="0.0" y="9.5" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="61S-A2-5IZ"/>
+                                        <constraint firstAttribute="width" secondItem="QcL-oa-NGs" secondAttribute="height" multiplier="1:1" id="oLa-Gh-S2R"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6T-7o-my9">
+                                    <rect key="frame" x="33" y="13" width="55.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fu-Ul-kK5">
+                                    <rect key="frame" x="92.5" y="13" width="29" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="N6T-7o-my9" firstAttribute="centerY" secondItem="QcL-oa-NGs" secondAttribute="centerY" id="8Cp-SB-h2U"/>
+                                <constraint firstItem="N6T-7o-my9" firstAttribute="leading" secondItem="QcL-oa-NGs" secondAttribute="trailing" constant="8" id="BCW-wn-uTc"/>
+                                <constraint firstItem="0Fu-Ul-kK5" firstAttribute="leading" secondItem="N6T-7o-my9" secondAttribute="trailing" constant="4" id="EL5-Vk-a8v"/>
+                                <constraint firstItem="QcL-oa-NGs" firstAttribute="leading" secondItem="Ylv-8f-Kd7" secondAttribute="leading" id="Vzz-Rn-feO"/>
+                                <constraint firstItem="0Fu-Ul-kK5" firstAttribute="centerY" secondItem="N6T-7o-my9" secondAttribute="centerY" id="dE3-h6-K14"/>
+                                <constraint firstItem="QcL-oa-NGs" firstAttribute="width" secondItem="QcL-oa-NGs" secondAttribute="height" multiplier="1:1" id="nSd-dM-N4h"/>
+                                <constraint firstItem="QcL-oa-NGs" firstAttribute="centerY" secondItem="Ylv-8f-Kd7" secondAttribute="centerY" id="zMa-ho-1XI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Ylv-8f-Kd7" secondAttribute="bottom" id="ASO-dp-5pk"/>
+                        <constraint firstItem="Ylv-8f-Kd7" firstAttribute="leading" secondItem="KZv-fJ-GbU" secondAttribute="leading" constant="25" id="Y3i-Is-HA0"/>
+                        <constraint firstItem="Ylv-8f-Kd7" firstAttribute="top" secondItem="KZv-fJ-GbU" secondAttribute="top" id="qLp-E5-XaQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Ylv-8f-Kd7" secondAttribute="trailing" constant="25" id="sVx-Iz-zua"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KZv-fJ-GbU" firstAttribute="trailing" secondItem="1wY-bb-D39" secondAttribute="trailing" id="1ld-Yx-SUK"/>
+                <constraint firstItem="KZv-fJ-GbU" firstAttribute="top" secondItem="1wY-bb-D39" secondAttribute="top" id="2L3-WI-LMa"/>
+                <constraint firstItem="KZv-fJ-GbU" firstAttribute="leading" secondItem="1wY-bb-D39" secondAttribute="leading" id="NEP-b1-KT3"/>
+                <constraint firstAttribute="bottom" secondItem="KZv-fJ-GbU" secondAttribute="bottom" id="VOp-U1-p16"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="AYU-f6-soP"/>
+            <point key="canvasLocation" x="47.826086956521742" y="-83.705357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="StarWhite" width="128" height="128"/>
+    </resources>
+</document>

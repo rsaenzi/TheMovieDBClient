@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieDetailHeaderCell: UITableViewCell {
     
@@ -14,9 +15,9 @@ class MovieDetailHeaderCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    @IBOutlet weak var backdropImage: UIImageView!
-    @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet private weak var backdropImage: UIImageView!
+    @IBOutlet private weak var posterImage: UIImageView!
+    @IBOutlet private weak var movieTitle: UILabel!
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,13 +43,49 @@ class MovieDetailHeaderCell: UITableViewCell {
         // Expand to fill its parent
         allContentView.frame = self.bounds
         allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        // This prevent the cell to change its color when selected
+        selectionStyle = .none
     }
 }
 
 // MARK: Data
 extension MovieDetailHeaderCell {
     
-    func setup(title: String, backdropImage: String?, posterImage: String?) {
-        self.selectionStyle = .none
+    func setup(title: String, backdropUrl: String?, posterUrl: String?) {
+        
+        movieTitle.text = title
+        
+        guard let backdropImageUrl = backdropUrl,
+              let posterImageUrl = posterUrl,
+              let backdropResourceUrl = URL(string: backdropImageUrl),
+              let posterResourceUrl = URL(string: posterImageUrl) else {
+                
+            backdropImage.image = Image.AppIconWhite.image()
+            posterImage.image = Image.AppIconWhite.image()
+            return
+        }
+        
+        let backdropPlaceholder = Image.AppIconWhite.image()
+        let posterPlaceholder = Image.AppIconWhite.image()
+        
+        let backdropResource = ImageResource(downloadURL: backdropResourceUrl, cacheKey: backdropImageUrl)
+        let posterResource = ImageResource(downloadURL: posterResourceUrl, cacheKey: posterImageUrl)
+        
+        let options: [KingfisherOptionsInfoItem] = [.transition(.fade(0.5)), .cacheOriginalImage]
+        
+        backdropImage.kf.setImage(
+            with: backdropResource,
+            placeholder: backdropPlaceholder,
+            options: options,
+            progressBlock: nil,
+            completionHandler: { _ in })
+        
+        posterImage.kf.setImage(
+            with: posterResource,
+            placeholder: posterPlaceholder,
+            options: options,
+            progressBlock: nil,
+            completionHandler: { _ in })
     }
 }

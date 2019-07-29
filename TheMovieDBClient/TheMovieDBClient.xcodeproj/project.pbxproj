@@ -92,6 +92,8 @@
 		B1D45BF322E6B27000325AD2 /* StateFetchingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BF222E6B27000325AD2 /* StateFetchingDataView.swift */; };
 		B1D45BF522E6B27B00325AD2 /* StateNoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BF422E6B27B00325AD2 /* StateNoInternetView.swift */; };
 		B1D45BF722E6B28600325AD2 /* StateErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D45BF622E6B28600325AD2 /* StateErrorView.swift */; };
+		B1FEA16722EEAFF6002D0C1D /* MovieDetailBudgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEA16622EEAFF6002D0C1D /* MovieDetailBudgetCell.swift */; };
+		B1FEA16922EEB000002D0C1D /* MovieDetailBudgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEA16822EEB000002D0C1D /* MovieDetailBudgetCell.xib */; };
 		DC953FF7E0F3E31B9D740A6C /* Pods_TheMovieDBClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FBBCF9228EBCF68C09380 /* Pods_TheMovieDBClientTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +210,8 @@
 		B1D45BF222E6B27000325AD2 /* StateFetchingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateFetchingDataView.swift; sourceTree = "<group>"; };
 		B1D45BF422E6B27B00325AD2 /* StateNoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNoInternetView.swift; sourceTree = "<group>"; };
 		B1D45BF622E6B28600325AD2 /* StateErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateErrorView.swift; sourceTree = "<group>"; };
+		B1FEA16622EEAFF6002D0C1D /* MovieDetailBudgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailBudgetCell.swift; sourceTree = "<group>"; };
+		B1FEA16822EEB000002D0C1D /* MovieDetailBudgetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailBudgetCell.xib; sourceTree = "<group>"; };
 		C7D21DD9AC72424B4593183A /* Pods_TheMovieDBClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDBClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB16E41622DD6E4BA752B376 /* Pods-TheMovieDBClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDBClientUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieDBClientUITests/Pods-TheMovieDBClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0FBBCF9228EBCF68C09380 /* Pods_TheMovieDBClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDBClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -485,6 +489,7 @@
 				B1CCC16E22E9836D00FEBAE5 /* Production */,
 				B1CCC16D22E9835C00FEBAE5 /* Country */,
 				B1CCC16C22E9835600FEBAE5 /* Revenue */,
+				B1FEA16522EEAFCA002D0C1D /* Budget */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -720,6 +725,15 @@
 			path = StateNoDataView;
 			sourceTree = "<group>";
 		};
+		B1FEA16522EEAFCA002D0C1D /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEA16822EEB000002D0C1D /* MovieDetailBudgetCell.xib */,
+				B1FEA16622EEAFF6002D0C1D /* MovieDetailBudgetCell.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
 		D41E3441D5EAB1D851658EDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +861,7 @@
 				B1D45BEF22E6B12700325AD2 /* StateErrorView.xib in Resources */,
 				B1D45BE922E6B0F700325AD2 /* StateFetchingDataView.xib in Resources */,
 				B1CCC16722E97C9F00FEBAE5 /* MovieDetailCountryCell.xib in Resources */,
+				B1FEA16922EEB000002D0C1D /* MovieDetailBudgetCell.xib in Resources */,
 				B1CCC15D22E97C6100FEBAE5 /* MovieDetailHomepageCell.xib in Resources */,
 				B123FEAE22E3CDB9008B8D1D /* Localizable.strings in Resources */,
 				B1040E3C22E2DCCD00E0D25A /* WelcomeVC.storyboard in Resources */,
@@ -983,6 +998,7 @@
 				B123FEB322E3D290008B8D1D /* MovieCatalogState.swift in Sources */,
 				B123FE8D22E3913C008B8D1D /* BuildConfiguration.swift in Sources */,
 				B1D45BF122E6B26400325AD2 /* StateNoDataView.swift in Sources */,
+				B1FEA16722EEAFF6002D0C1D /* MovieDetailBudgetCell.swift in Sources */,
 				B130E5EA22E96CE300BB58CA /* MovieDetailRevenueCell.swift in Sources */,
 				B123FEC822E501E3008B8D1D /* SpokenLanguage.swift in Sources */,
 				B130E5E422E96CB600BB58CA /* MovieDetailOriginalCell.swift in Sources */,

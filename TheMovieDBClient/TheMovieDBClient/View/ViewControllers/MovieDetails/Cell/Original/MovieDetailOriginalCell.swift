@@ -40,6 +40,9 @@ class MovieDetailOriginalCell: UITableViewCell {
         // Expand to fill its parent
         allContentView.frame = self.bounds
         allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        // This prevent the cell to change its color when selected
+        selectionStyle = .none
     }
 }
 
@@ -47,6 +50,6 @@ class MovieDetailOriginalCell: UITableViewCell {
 extension MovieDetailOriginalCell {
     
     func setup(title: String) {
-        self.selectionStyle = .none
+        
     }
 }

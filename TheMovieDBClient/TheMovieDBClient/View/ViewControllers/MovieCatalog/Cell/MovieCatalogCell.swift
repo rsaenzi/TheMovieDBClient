@@ -17,12 +17,14 @@ class MovieCatalogCell: UICollectionViewCell {
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var releaseDate: UILabel!
     
-    override init(frame: CGRect) { // From Code
+    // From Code
+    override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) { // From IB
+    // From IB
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }

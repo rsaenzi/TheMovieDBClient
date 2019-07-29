@@ -1,20 +1,20 @@
 //
-//  MovieDetailOverviewCell.swift
+//  MovieDetailBudgetCell.swift
 //  TheMovieDBClient
 //
-//  Created by Rigoberto Saenz Imbacuan on 7/24/19.
+//  Created by Rigoberto Saenz Imbacuan on 7/28/19.
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
 import UIKit
 
-class MovieDetailOverviewCell: UITableViewCell {
+class MovieDetailBudgetCell: UITableViewCell {
     
     // This property must be bound to the whole view in Interface Builder
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    
+    @IBOutlet private weak var budgetLabel: UILabel!
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -47,9 +47,9 @@ class MovieDetailOverviewCell: UITableViewCell {
 }
 
 // MARK: Data
-extension MovieDetailOverviewCell {
+extension MovieDetailBudgetCell {
     
-    func setup(overview: String) {
-        
+    func setup(budget: Int) {
+        budgetLabel.text = "\(String(budget)) USD"
     }
 }

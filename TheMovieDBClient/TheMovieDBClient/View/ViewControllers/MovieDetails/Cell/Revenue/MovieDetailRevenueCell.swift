@@ -14,7 +14,7 @@ class MovieDetailRevenueCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    
+    @IBOutlet private weak var revenueLabel: UILabel!
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,13 +40,16 @@ class MovieDetailRevenueCell: UITableViewCell {
         // Expand to fill its parent
         allContentView.frame = self.bounds
         allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        // This prevent the cell to change its color when selected
+        selectionStyle = .none
     }
 }
 
 // MARK: Data
 extension MovieDetailRevenueCell {
     
-    func setup(budget: Int, revenue: Int) {
-        self.selectionStyle = .none
+    func setup(revenue: Int) {
+        revenueLabel.text = "\(String(revenue)) USD"
     }
 }
