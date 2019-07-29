@@ -25,6 +25,13 @@ extension UICollectionView {
     }
 }
 
+extension UICollectionViewCell {
+    
+    static func getReuseIdentifier() -> String {
+        return className(some: self)
+    }
+}
+
 private func className(some: Any) -> String {
     return (some is Any.Type) ? "\(some)" : "\(type(of: some))"
 }

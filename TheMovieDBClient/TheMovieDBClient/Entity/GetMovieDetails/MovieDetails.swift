@@ -22,6 +22,7 @@ struct MovieDetails: Codable {
     let voteAverage: Float
     let video: Bool
     let adult: Bool
+    
     let homepage: String?
     let imdbId: String?
     let budget: Int

@@ -9,14 +9,11 @@
 // Spanish
 
 // General
-"appName" = "";
+"appName" = "MerqueMovie";
 
 // Movie Catalog
 "movieCatalogCredentialsError" = "";
 "movieCatalogGeneralError" = "";
 "movieCatalogServerError" = "";
 
-// Movie Details
-"movieDetailsCredentialsError" = "";
-"movieDetailsGeneralError" = "";
-"movieDetailsServerError" = "";
+// TODO add here

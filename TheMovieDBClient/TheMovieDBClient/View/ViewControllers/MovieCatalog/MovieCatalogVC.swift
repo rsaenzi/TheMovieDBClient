@@ -36,6 +36,7 @@ extension MovieCatalogVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
         setupBindings()
         
         // Icon on Navigation Bar
@@ -43,10 +44,6 @@ extension MovieCatalogVC {
         titleView.contentMode = .scaleAspectFit
         titleView.image = Image.AppIconWhite.image()
         navigationItem.titleView = titleView
-        
-        // Cell Registration
-        grid.register(MovieCatalogCell.getNib(),
-                      forCellWithReuseIdentifier: MovieCatalogCell.getReuseIdentifier())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +106,10 @@ extension MovieCatalogVC {
 
 // MARK: Collection View
 extension MovieCatalogVC: UICollectionViewDelegateFlowLayout {
+    
+    private func registerCells() {
+        grid.register(MovieCatalogCell.getNib(), forCellWithReuseIdentifier: MovieCatalogCell.getReuseIdentifier())
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth, height: cellHeight)

@@ -12,14 +12,11 @@ class MovieCatalogPresenter {
     
     // MARK: Bindings
     let state = BehaviorSubject<MovieCatalogState>(value: .noData)
-    private var movies = [MovieResult]()
+    private let bag = DisposeBag()
     
     // MARK: Interactors
     private let getConfigurationInteractor = GetConfigurationInteractor()
     private let getPopularMoviesInteractor = GetPopularMoviesInteractor()
-    
-    // MARK: Bindings
-    private let bag = DisposeBag()
     
     // MARK: Pagination
     private var currentPage = 1
@@ -28,6 +25,10 @@ class MovieCatalogPresenter {
     
     // MARK: Image Quality
     private let useLowResImages = true
+    
+    // MARK: Data
+    private var movies = [MovieResult]()
+    
     
     // MARK: Life Cycle
     public init() {

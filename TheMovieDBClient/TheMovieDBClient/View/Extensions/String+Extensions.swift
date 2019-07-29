@@ -22,9 +22,4 @@ extension String {
     func removeNonNumericCharacters() -> String {
         return self.removeCharacters(from: CharacterSet.decimalDigits.inverted)
     }
-    
-    static func getRandomString(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0..<length).map{ _ in letters.randomElement()! })
-    }
 }

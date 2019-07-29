@@ -36,11 +36,6 @@ class StateFetchingDataView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
-    
-    static func getNib() -> UINib {
-        let nibName = className(some: self)
-        return UINib(nibName: nibName, bundle: nil)
-    }
 }
 
 private func className(some: Any) -> String {

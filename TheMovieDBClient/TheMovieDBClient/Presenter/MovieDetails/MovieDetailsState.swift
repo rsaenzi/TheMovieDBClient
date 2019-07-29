@@ -7,9 +7,6 @@
 //
 
 enum MovieDetailsState {
-    case noData
-    case fetchingData
-    case dataAvailable(movie: MovieDetails)
-    case noInternet
-    case error(key: LanguageKey)
+    case success(movie: MovieDetails)
+    case error
 }

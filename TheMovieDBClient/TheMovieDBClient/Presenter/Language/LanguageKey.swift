@@ -15,9 +15,4 @@ enum LanguageKey: String {
     case movieCatalogCredentialsError
     case movieCatalogGeneralError
     case movieCatalogServerError
-    
-    // Movie Details
-    case movieDetailsCredentialsError
-    case movieDetailsGeneralError
-    case movieDetailsServerError
 }
