@@ -87,7 +87,3 @@ extension UIStoryboard {
         return screen
     }
 }
-
-private func className(some: Any) -> String {
-    return (some is Any.Type) ? "\(some)" : "\(type(of: some))"
-}

@@ -71,17 +71,17 @@ extension MovieDetailsVC {
 extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     private func registerCells() {
-        table.register(MovieDetailHeaderCell.getNib(), forCellReuseIdentifier: MovieDetailHeaderCell.getReuseIdentifier())
-        table.register(MovieDetailRatingCell.getNib(), forCellReuseIdentifier: MovieDetailRatingCell.getReuseIdentifier())
-        table.register(MovieDetailTaglineCell.getNib(), forCellReuseIdentifier: MovieDetailTaglineCell.getReuseIdentifier())
-        table.register(MovieDetailOverviewCell.getNib(), forCellReuseIdentifier: MovieDetailOverviewCell.getReuseIdentifier())
-        table.register(MovieDetailHomepageCell.getNib(), forCellReuseIdentifier: MovieDetailHomepageCell.getReuseIdentifier())
-        table.register(MovieDetailImdbCell.getNib(), forCellReuseIdentifier: MovieDetailImdbCell.getReuseIdentifier())
-        table.register(MovieDetailGenreCell.getNib(), forCellReuseIdentifier: MovieDetailGenreCell.getReuseIdentifier())
-        table.register(MovieDetailOriginalCell.getNib(), forCellReuseIdentifier: MovieDetailOriginalCell.getReuseIdentifier())
-        table.register(MovieDetailProductionCell.getNib(), forCellReuseIdentifier: MovieDetailProductionCell.getReuseIdentifier())
-        table.register(MovieDetailCountryCell.getNib(), forCellReuseIdentifier: MovieDetailCountryCell.getReuseIdentifier())
-        table.register(MovieDetailRevenueCell.getNib(), forCellReuseIdentifier: MovieDetailRevenueCell.getReuseIdentifier())
+        table.register(MovieDetailHeaderCell.self, forCellReuseIdentifier: MovieDetailHeaderCell.getReuseIdentifier())
+        table.register(MovieDetailRatingCell.self, forCellReuseIdentifier: MovieDetailRatingCell.getReuseIdentifier())
+        table.register(MovieDetailTaglineCell.self, forCellReuseIdentifier: MovieDetailTaglineCell.getReuseIdentifier())
+        table.register(MovieDetailOverviewCell.self, forCellReuseIdentifier: MovieDetailOverviewCell.getReuseIdentifier())
+        table.register(MovieDetailHomepageCell.self, forCellReuseIdentifier: MovieDetailHomepageCell.getReuseIdentifier())
+        table.register(MovieDetailImdbCell.self, forCellReuseIdentifier: MovieDetailImdbCell.getReuseIdentifier())
+        table.register(MovieDetailGenreCell.self, forCellReuseIdentifier: MovieDetailGenreCell.getReuseIdentifier())
+        table.register(MovieDetailOriginalCell.self, forCellReuseIdentifier: MovieDetailOriginalCell.getReuseIdentifier())
+        table.register(MovieDetailProductionCell.self, forCellReuseIdentifier: MovieDetailProductionCell.getReuseIdentifier())
+        table.register(MovieDetailCountryCell.self, forCellReuseIdentifier: MovieDetailCountryCell.getReuseIdentifier())
+        table.register(MovieDetailRevenueCell.self, forCellReuseIdentifier: MovieDetailRevenueCell.getReuseIdentifier())
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

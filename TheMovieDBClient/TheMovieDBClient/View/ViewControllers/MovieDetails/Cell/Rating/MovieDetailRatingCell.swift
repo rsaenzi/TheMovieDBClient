@@ -10,24 +10,36 @@ import UIKit
 
 class MovieDetailRatingCell: UITableViewCell {
     
+    // This property must be bound to the whole view in Interface Builder
+    @IBOutlet private weak var allContentView: UIView!
+    
     // MARK: Outlets
     
     
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) { // From Code
+    // From Code
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) { // From IB
+    // From IB
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
     private func commonInit() {
         
+        // Name of the .xib file
+        let nibName = className(some: self)
+        
+        // Load and add this custom view
+        Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
+        addSubview(allContentView)
+        
         // Expand to fill its parent
-        self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        allContentView.frame = self.bounds
+        allContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }
 

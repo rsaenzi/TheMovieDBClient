@@ -37,7 +37,3 @@ class StateErrorView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }
-
-private func className(some: Any) -> String {
-    return (some is Any.Type) ? "\(some)" : "\(type(of: some))"
-}

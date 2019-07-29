@@ -16,6 +16,6 @@ extension UIView {
     }
 }
 
-private func className(some: Any) -> String {
+public func className(some: Any) -> String {
     return (some is Any.Type) ? "\(some)" : "\(type(of: some))"
 }

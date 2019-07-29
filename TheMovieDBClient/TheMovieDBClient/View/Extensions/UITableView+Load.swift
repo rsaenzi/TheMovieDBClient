@@ -31,7 +31,3 @@ extension UITableViewCell {
         return className(some: self)
     }
 }
-
-private func className(some: Any) -> String {
-    return (some is Any.Type) ? "\(some)" : "\(type(of: some))"
-}
