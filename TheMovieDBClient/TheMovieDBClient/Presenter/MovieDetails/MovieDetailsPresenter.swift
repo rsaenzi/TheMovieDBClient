@@ -41,7 +41,6 @@ extension MovieDetailsPresenter {
         
         detailItems = []
         detailItems.append(.header(title: movie.title, backdropImage: movie.getBackdropPathImage(), posterImage: movie.getPosterPathImage()))
-        detailItems.append(.rating(rating: movie.voteAverage, releaseDate: movie.releaseDate))
     }
     
     private func loadDetails(from movie: MovieDetails) {
@@ -53,6 +52,8 @@ extension MovieDetailsPresenter {
         if let homepage = movie.homepage, homepage.count > 0 {
             detailItems.append(.homepage(homepage: homepage))
         }
+        
+        detailItems.append(.rating(rating: movie.voteAverage, releaseDate: movie.releaseDate))
         
         if let overview = movie.overview, overview.count > 0 {
             detailItems.append(.overview(overview: overview))
@@ -75,9 +76,14 @@ extension MovieDetailsPresenter {
         for country in movie.productionCountries {
             detailItems.append(.country(country: country))
         }
+        
+        if movie.revenue > 0 {
+            detailItems.append(.revenue(revenue: movie.revenue))
+        }
 
-        detailItems.append(.revenue(revenue: movie.revenue))
-        detailItems.append(.budget(budget: movie.budget))
+        if movie.budget > 0 {
+            detailItems.append(.budget(budget: movie.budget))
+        }
     }
 }
 

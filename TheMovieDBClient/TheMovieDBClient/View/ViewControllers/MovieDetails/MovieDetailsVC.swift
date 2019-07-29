@@ -173,10 +173,10 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             return 100 // TODO Calculate
             
         case .homepage:
-            return 40
+            return 35
             
         case .imdb:
-            return 40
+            return 35
             
         case .genre:
             return 40 // TODO Calculate
