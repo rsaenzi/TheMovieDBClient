@@ -46,26 +46,26 @@ extension MovieDetailsPresenter {
     
     private func loadDetails(from movie: MovieDetails) {
         
-//        detailItems.append(.tagline(tagline: movie.tagline))
-//        detailItems.append(.overview(overview: movie.overview))
-//        detailItems.append(.homepage(homepage: movie.homepage))
-//        detailItems.append(.imdb(imdbId: movie.imdbId))
-//
-//        for genre in movie.genres {
-//            detailItems.append(.genre(genre: genre))
-//        }
-//
-//        detailItems.append(.original(title: movie.originalTitle))
-//
-//        for company in movie.productionCompanies {
-//            detailItems.append(.production(company: company))
-//        }
-//
-//        for country in movie.productionCountries {
-//            detailItems.append(.country(country: country))
-//        }
-//
-//        detailItems.append(.revenue(budget: movie.budget, revenue: movie.revenue))
+        detailItems.append(.tagline(tagline: movie.tagline))
+        detailItems.append(.overview(overview: movie.overview))
+        detailItems.append(.homepage(homepage: movie.homepage))
+        detailItems.append(.imdb(imdbId: movie.imdbId))
+
+        for genre in movie.genres {
+            detailItems.append(.genre(genre: genre))
+        }
+
+        detailItems.append(.original(title: movie.originalTitle))
+
+        for company in movie.productionCompanies {
+            detailItems.append(.production(company: company))
+        }
+
+        for country in movie.productionCountries {
+            detailItems.append(.country(country: country))
+        }
+
+        detailItems.append(.revenue(budget: movie.budget, revenue: movie.revenue))
     }
 }
 

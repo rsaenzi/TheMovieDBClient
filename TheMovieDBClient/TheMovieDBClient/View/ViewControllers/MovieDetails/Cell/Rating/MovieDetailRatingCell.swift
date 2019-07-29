@@ -27,7 +27,7 @@ class MovieDetailRatingCell: UITableViewCell {
     private func commonInit() {
         
         // Expand to fill its parent
-//        self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }
 

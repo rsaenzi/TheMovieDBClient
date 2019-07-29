@@ -10,10 +10,17 @@ import UIKit
 
 class MovieDetailHeaderCell: UITableViewCell {
     
-    // MARK: Outlets
+    
     @IBOutlet weak var backdropImage: UIImageView!
-    @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var movieTitle: UILabel!
+    
+    
+    
+    
+    
+    // MARK: Outlets
+//    @IBOutlet weak var backdropImage: UIImageView!
+//    @IBOutlet weak var posterImage: UIImageView!
+//    @IBOutlet weak var movieTitle: UILabel!
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) { // From Code
@@ -29,7 +36,7 @@ class MovieDetailHeaderCell: UITableViewCell {
     private func commonInit() {
         
         // Expand to fill its parent
-//        self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }
 
