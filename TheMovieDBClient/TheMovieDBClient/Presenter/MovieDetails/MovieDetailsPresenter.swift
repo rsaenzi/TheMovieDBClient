@@ -96,6 +96,14 @@ extension MovieDetailsPresenter {
             detailItems.append(.imdb(imdbUrl: "\(ApiCredentials.imdbUrl)\(imdbId)"))
         }
     }
+    
+    private func getLoadedIndexPaths() -> [IndexPath] {
+        let rows: [Int] = Array(1...detailItems.count - 1)
+        let indexPaths = rows.map { row -> IndexPath in
+            return IndexPath(row: row, section: 0)
+        }
+        return indexPaths
+    }
 }
 
 // MARK: Bindings
@@ -136,7 +144,7 @@ extension MovieDetailsPresenter {
             
         case .success(let content):
             loadDetails(from: content)
-            state.onNext(.success(movie: content))
+            state.onNext(.success(newIndexPaths: getLoadedIndexPaths()))
             
         default:
             state.onNext(.error)

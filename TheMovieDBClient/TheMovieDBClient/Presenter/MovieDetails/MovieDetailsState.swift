@@ -6,7 +6,9 @@
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
+import UIKit
+
 enum MovieDetailsState {
-    case success(movie: MovieDetails)
+    case success(newIndexPaths: [IndexPath])
     case error
 }

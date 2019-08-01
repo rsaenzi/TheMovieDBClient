@@ -58,10 +58,7 @@ extension MovieDetailsVC {
                 switch state.element! {
 
                 case .success(let newIndexPaths):
-                    self.table.reloadData()
-                    
-                    // TODO change reloadData for AddRows
-//                    self.table.insertRows(at: newIndexPaths, with: UITableView.RowAnimation.automatic)
+                    self.table.insertRows(at: newIndexPaths, with: .fade)
 
                 default:
                     break
