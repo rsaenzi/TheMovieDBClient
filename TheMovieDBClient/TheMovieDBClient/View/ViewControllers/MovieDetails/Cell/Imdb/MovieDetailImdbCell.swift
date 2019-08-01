@@ -14,7 +14,8 @@ class MovieDetailImdbCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    @IBOutlet weak var imdbUrlLabel: UILabel!
+    @IBOutlet private weak var imdbUrlLabel: UILabel!
+    
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -49,7 +50,7 @@ class MovieDetailImdbCell: UITableViewCell {
 // MARK: Data
 extension MovieDetailImdbCell {
     
-    func setup(imdbId: String) {
-        imdbUrlLabel.text = "\(ApiCredentials.imdbUrl)\(imdbId)"
+    func setup(imdbUrl: String) {
+        imdbUrlLabel.text = imdbUrl
     }
 }

@@ -19,6 +19,7 @@ class MovieDetailHeaderCell: UITableViewCell {
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var movieTitle: UILabel!
     
+    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

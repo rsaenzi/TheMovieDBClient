@@ -17,6 +17,7 @@ class MovieDetailRatingCell: UITableViewCell {
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var releaseDateLabel: UILabel!
     
+    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,7 +52,6 @@ class MovieDetailRatingCell: UITableViewCell {
 extension MovieDetailRatingCell {
     
     func setup(rating: Float, releaseDate: String) {
-        
         ratingLabel.text = String(rating)
         releaseDateLabel.text = releaseDate
     }

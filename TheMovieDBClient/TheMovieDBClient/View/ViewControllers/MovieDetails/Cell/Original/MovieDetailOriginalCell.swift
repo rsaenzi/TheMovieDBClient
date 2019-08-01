@@ -14,6 +14,7 @@ class MovieDetailOriginalCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
+    @IBOutlet private weak var originalTitleLabel: UILabel!
     
     
     // From Code
@@ -50,6 +51,6 @@ class MovieDetailOriginalCell: UITableViewCell {
 extension MovieDetailOriginalCell {
     
     func setup(title: String) {
-        
+        originalTitleLabel.text = title
     }
 }

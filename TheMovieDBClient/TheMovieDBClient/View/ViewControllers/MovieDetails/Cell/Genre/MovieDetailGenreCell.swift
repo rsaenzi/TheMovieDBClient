@@ -14,6 +14,7 @@ class MovieDetailGenreCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
+    @IBOutlet private weak var genreLabel: UILabel!
     
     
     // From Code
@@ -50,6 +51,6 @@ class MovieDetailGenreCell: UITableViewCell {
 extension MovieDetailGenreCell {
     
     func setup(genre: Genre) {
-        
+        genreLabel.text = genre.name
     }
 }

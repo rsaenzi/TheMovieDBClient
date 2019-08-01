@@ -14,6 +14,7 @@ class MovieDetailOverviewCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
+    @IBOutlet private weak var overviewLabel: UILabel!
     
     
     // From Code
@@ -50,6 +51,10 @@ class MovieDetailOverviewCell: UITableViewCell {
 extension MovieDetailOverviewCell {
     
     func setup(overview: String) {
-        
+        overviewLabel.text = overview
+    }
+    
+    func calculateCellHeight() -> CGFloat {
+        return overviewLabel.calculateHeight() + 16
     }
 }

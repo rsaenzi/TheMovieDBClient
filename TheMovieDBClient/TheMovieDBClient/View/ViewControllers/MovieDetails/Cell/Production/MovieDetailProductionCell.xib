@@ -13,16 +13,58 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailProductionCell" customModule="TheMovieDBClient" customModuleProvider="target">
             <connections>
                 <outlet property="allContentView" destination="iN0-l3-epB" id="VCC-UB-3L7"/>
+                <outlet property="productionLabel" destination="wHv-uG-E2C" id="8A7-2x-e00"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRh-Ij-eTG" userLabel="Content">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                    <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7L-fZ-VKB" userLabel="Margins">
+                            <rect key="frame" x="25" y="0.0" width="350" height="40"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="1zf-cX-gii">
+                                    <rect key="frame" x="0.0" y="7.5" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="TW2-vM-fJT"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Production:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZl-Kh-Ogr">
+                                    <rect key="frame" x="33" y="11" width="81.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loreum Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-uG-E2C">
+                                    <rect key="frame" x="118.5" y="11" width="100" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="mZl-Kh-Ogr" firstAttribute="leading" secondItem="1zf-cX-gii" secondAttribute="trailing" constant="8" id="4jZ-de-TOa"/>
+                                <constraint firstItem="1zf-cX-gii" firstAttribute="centerY" secondItem="C7L-fZ-VKB" secondAttribute="centerY" id="8xw-xJ-1dt"/>
+                                <constraint firstItem="wHv-uG-E2C" firstAttribute="centerY" secondItem="mZl-Kh-Ogr" secondAttribute="centerY" id="Q8Z-J2-rIk"/>
+                                <constraint firstItem="wHv-uG-E2C" firstAttribute="leading" secondItem="mZl-Kh-Ogr" secondAttribute="trailing" constant="4" id="Y82-FQ-Wva"/>
+                                <constraint firstItem="1zf-cX-gii" firstAttribute="width" secondItem="1zf-cX-gii" secondAttribute="height" multiplier="1:1" id="qUh-aJ-4Vh"/>
+                                <constraint firstItem="mZl-Kh-Ogr" firstAttribute="centerY" secondItem="1zf-cX-gii" secondAttribute="centerY" id="wgx-GZ-c7E"/>
+                                <constraint firstItem="1zf-cX-gii" firstAttribute="leading" secondItem="C7L-fZ-VKB" secondAttribute="leading" id="wmb-R2-NID"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="C7L-fZ-VKB" secondAttribute="trailing" constant="25" id="RNC-rQ-aun"/>
+                        <constraint firstAttribute="bottom" secondItem="C7L-fZ-VKB" secondAttribute="bottom" id="kxR-2t-mCp"/>
+                        <constraint firstItem="C7L-fZ-VKB" firstAttribute="top" secondItem="TRh-Ij-eTG" secondAttribute="top" id="npb-qT-5PG"/>
+                        <constraint firstItem="C7L-fZ-VKB" firstAttribute="leading" secondItem="TRh-Ij-eTG" secondAttribute="leading" constant="25" id="wqg-SO-7xa"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,4 +79,7 @@
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="StarWhite" width="128" height="128"/>
+    </resources>
 </document>

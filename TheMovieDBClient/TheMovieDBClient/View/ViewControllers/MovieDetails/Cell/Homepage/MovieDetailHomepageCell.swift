@@ -16,6 +16,7 @@ class MovieDetailHomepageCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet private weak var homepageLabel: UILabel!
     
+    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

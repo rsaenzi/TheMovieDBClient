@@ -14,6 +14,7 @@ class MovieDetailProductionCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
+    @IBOutlet private weak var productionLabel: UILabel!
     
     
     // From Code
@@ -50,6 +51,6 @@ class MovieDetailProductionCell: UITableViewCell {
 extension MovieDetailProductionCell {
     
     func setup(company: ProductionCompany) {
-        
+        productionLabel.text = company.name
     }
 }

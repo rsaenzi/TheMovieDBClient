@@ -24,19 +24,30 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-SG-UBz" userLabel="Content">
                     <rect key="frame" x="0.0" y="0.0" width="428" height="63"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twa-e4-ydo">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IZ-c7-Q22" userLabel="Margins">
                             <rect key="frame" x="25" y="0.0" width="378" height="63"/>
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
-                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twa-e4-ydo">
+                                    <rect key="frame" x="0.0" y="22" width="378" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                    <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Twa-e4-ydo" firstAttribute="leading" secondItem="9IZ-c7-Q22" secondAttribute="leading" id="KNx-Xk-o64"/>
+                                <constraint firstItem="Twa-e4-ydo" firstAttribute="centerY" secondItem="9IZ-c7-Q22" secondAttribute="centerY" id="muu-k0-2HP"/>
+                                <constraint firstAttribute="trailing" secondItem="Twa-e4-ydo" secondAttribute="trailing" id="r9e-Ow-8yF"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="Twa-e4-ydo" firstAttribute="leading" secondItem="hGQ-SG-UBz" secondAttribute="leading" constant="25" id="4b8-zW-ea0"/>
-                        <constraint firstItem="Twa-e4-ydo" firstAttribute="top" secondItem="hGQ-SG-UBz" secondAttribute="top" id="6ac-kj-lNX"/>
-                        <constraint firstAttribute="trailing" secondItem="Twa-e4-ydo" secondAttribute="trailing" constant="25" id="k4r-md-cta"/>
-                        <constraint firstAttribute="bottom" secondItem="Twa-e4-ydo" secondAttribute="bottom" id="qh3-Kk-N0v"/>
+                        <constraint firstAttribute="trailing" secondItem="9IZ-c7-Q22" secondAttribute="trailing" constant="25" id="EyT-34-ipu"/>
+                        <constraint firstAttribute="bottom" secondItem="9IZ-c7-Q22" secondAttribute="bottom" id="XRg-XQ-6Ab"/>
+                        <constraint firstItem="9IZ-c7-Q22" firstAttribute="leading" secondItem="hGQ-SG-UBz" secondAttribute="leading" constant="25" id="fwU-DP-XDj"/>
+                        <constraint firstItem="9IZ-c7-Q22" firstAttribute="top" secondItem="hGQ-SG-UBz" secondAttribute="top" id="kbA-pv-P7Z"/>
                     </constraints>
                 </view>
             </subviews>

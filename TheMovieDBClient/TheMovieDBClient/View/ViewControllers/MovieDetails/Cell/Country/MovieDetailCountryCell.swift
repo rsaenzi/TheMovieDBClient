@@ -14,6 +14,7 @@ class MovieDetailCountryCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
+    @IBOutlet private weak var countryLabel: UILabel!
     
     
     // From Code
@@ -50,6 +51,6 @@ class MovieDetailCountryCell: UITableViewCell {
 extension MovieDetailCountryCell {
     
     func setup(country: ProductionCountry) {
-        
+        countryLabel.text = country.name
     }
 }

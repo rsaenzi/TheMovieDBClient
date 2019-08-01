@@ -14,7 +14,8 @@ class MovieDetailTaglineCell: UITableViewCell {
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    @IBOutlet weak var taglineLabel: UILabel!
+    @IBOutlet private weak var taglineLabel: UILabel!
+    
     
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

@@ -26,6 +26,8 @@ class MovieDetailsVC: UIViewController {
     
     // MARK: Bindings
     private let bag = DisposeBag()
+    
+    private var overviewCellHeight: CGFloat = 0
 }
 
 // MARK: Life Cycle
@@ -110,6 +112,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         case .overview(let overview):
             let cell: MovieDetailOverviewCell = tableView.dequeue(indexPath)
             cell.setup(overview: overview)
+            overviewCellHeight = cell.calculateCellHeight()
             return cell
             
         case .homepage(let homepage):
@@ -117,9 +120,9 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             cell.setup(homepage: homepage)
             return cell
             
-        case .imdb(let imdbId):
+        case .imdb(let imdbUrl):
             let cell: MovieDetailImdbCell = tableView.dequeue(indexPath)
-            cell.setup(imdbId: imdbId)
+            cell.setup(imdbUrl: imdbUrl)
             return cell
             
         case .genre(let genre):
@@ -170,7 +173,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             return 50
             
         case .overview:
-            return 100 // TODO Calculate
+            return overviewCellHeight
             
         case .homepage:
             return 35
@@ -182,7 +185,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             return 40 // TODO Calculate
             
         case .original:
-            return 40 // TODO Calculate
+            return 40
             
         case .production:
             return 40 // TODO Calculate
@@ -208,8 +211,8 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         case .homepage(let homepage):
             open(homepage: homepage)
             
-        case .imdb(let imdbId):
-            open(imdbId: imdbId)
+        case .imdb(let imdbUrl):
+            open(imdbUrl: imdbUrl)
         
         default:
             break
@@ -232,9 +235,9 @@ extension MovieDetailsVC {
         }
     }
     
-    private func open(imdbId: String?) {
+    private func open(imdbUrl: String?) {
 
-        if let id = imdbId, let url = URL(string: "\(ApiCredentials.imdbUrl)\(id)"),
+        if let validUrl = imdbUrl, let url = URL(string: validUrl),
             UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
