@@ -40,7 +40,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="nuD-Xw-ddH" firstAttribute="leading" secondItem="Gfx-ip-Obw" secondAttribute="leading" id="Ury-tu-eSL"/>
                                 <constraint firstItem="YZS-YH-gb8" firstAttribute="leading" secondItem="nuD-Xw-ddH" secondAttribute="trailing" constant="8" id="gAR-tY-7Gv"/>
@@ -50,7 +50,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Gfx-ip-Obw" secondAttribute="bottom" id="IVa-m3-hMm"/>
                         <constraint firstItem="Gfx-ip-Obw" firstAttribute="top" secondItem="ilR-pc-lSa" secondAttribute="top" id="htT-lR-HV6"/>

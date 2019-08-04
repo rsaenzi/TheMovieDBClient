@@ -19,7 +19,6 @@ class MovieDetailHeaderCell: UITableViewCell {
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var movieTitle: UILabel!
     
-    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,6 +30,10 @@ class MovieDetailHeaderCell: UITableViewCell {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension MovieDetailHeaderCell {
     
     private func commonInit() {
         
@@ -50,7 +53,7 @@ class MovieDetailHeaderCell: UITableViewCell {
     }
 }
 
-// MARK: Data
+// MARK: Setup
 extension MovieDetailHeaderCell {
     
     func setup(title: String, backdropUrl: String?, posterUrl: String?) {

@@ -24,6 +24,10 @@ class StateNoDataView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension StateNoDataView {
     
     private func commonInit() {
         

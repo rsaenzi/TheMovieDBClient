@@ -16,7 +16,6 @@ class MovieDetailGenreCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet private weak var genreLabel: UILabel!
     
-    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,6 +27,10 @@ class MovieDetailGenreCell: UITableViewCell {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension MovieDetailGenreCell {
     
     private func commonInit() {
         
@@ -47,7 +50,7 @@ class MovieDetailGenreCell: UITableViewCell {
     }
 }
 
-// MARK: Data
+// MARK: Setup
 extension MovieDetailGenreCell {
     
     func setup(genre: String) {

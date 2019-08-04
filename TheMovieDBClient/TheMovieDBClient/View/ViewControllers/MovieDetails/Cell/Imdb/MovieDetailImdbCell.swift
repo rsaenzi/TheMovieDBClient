@@ -16,7 +16,6 @@ class MovieDetailImdbCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet private weak var imdbUrlLabel: UILabel!
     
-    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,6 +27,10 @@ class MovieDetailImdbCell: UITableViewCell {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension MovieDetailImdbCell {
     
     private func commonInit() {
         
@@ -47,7 +50,7 @@ class MovieDetailImdbCell: UITableViewCell {
     }
 }
 
-// MARK: Data
+// MARK: Setup
 extension MovieDetailImdbCell {
     
     func setup(imdbUrl: String) {

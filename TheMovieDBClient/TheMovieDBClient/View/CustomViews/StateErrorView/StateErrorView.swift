@@ -24,6 +24,10 @@ class StateErrorView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension StateErrorView {
     
     private func commonInit() {
         

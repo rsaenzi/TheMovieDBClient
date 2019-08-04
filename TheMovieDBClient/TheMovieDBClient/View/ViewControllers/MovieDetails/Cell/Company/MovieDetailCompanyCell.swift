@@ -19,7 +19,6 @@ class MovieDetailCompanyCell: UITableViewCell {
     @IBOutlet private weak var companyLabel: UILabel!
     @IBOutlet private weak var countryLabel: UILabel!
     
-    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,6 +30,10 @@ class MovieDetailCompanyCell: UITableViewCell {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension MovieDetailCompanyCell {
     
     private func commonInit() {
         
@@ -50,7 +53,7 @@ class MovieDetailCompanyCell: UITableViewCell {
     }
 }
 
-// MARK: Data
+// MARK: Setup
 extension MovieDetailCompanyCell {
     
     func setup(name: String, logoPath: String?, originCountry: String) {

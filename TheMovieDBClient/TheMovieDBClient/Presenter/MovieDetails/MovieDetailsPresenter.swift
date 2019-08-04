@@ -41,7 +41,7 @@ class MovieDetailsPresenter {
     }
 }
 
-// MARK: Init Logic
+// MARK: Setup
 extension MovieDetailsPresenter {
     
     private func setup(using movie: MovieResult) {

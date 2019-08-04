@@ -24,6 +24,10 @@ class StateFetchingDataView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension StateFetchingDataView {
     
     private func commonInit() {
         

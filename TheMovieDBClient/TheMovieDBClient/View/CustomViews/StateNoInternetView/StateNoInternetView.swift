@@ -24,6 +24,10 @@ class StateNoInternetView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension StateNoInternetView {
     
     private func commonInit() {
         

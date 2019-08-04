@@ -16,7 +16,6 @@ class MovieDetailHomepageCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet private weak var homepageLabel: UILabel!
     
-    
     // From Code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,6 +27,10 @@ class MovieDetailHomepageCell: UITableViewCell {
         super.init(coder: aDecoder)
         commonInit()
     }
+}
+
+// MARK: Init
+extension MovieDetailHomepageCell {
     
     private func commonInit() {
         
@@ -47,7 +50,7 @@ class MovieDetailHomepageCell: UITableViewCell {
     }
 }
 
-// MARK: Data
+// MARK: Setup
 extension MovieDetailHomepageCell {
     
     func setup(homepage: String) {

@@ -36,7 +36,7 @@ class MovieCatalogCell: UICollectionViewCell {
     }
 }
 
-// MARK: Data
+// MARK: Setup
 extension MovieCatalogCell {
     
     func setup(for movie: MovieResult) {
