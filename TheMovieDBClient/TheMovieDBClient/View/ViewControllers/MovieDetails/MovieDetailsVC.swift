@@ -78,9 +78,12 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         table.register(MovieDetailHomepageCell.self, forCellReuseIdentifier: MovieDetailHomepageCell.getReuseIdentifier())
         table.register(MovieDetailImdbCell.self, forCellReuseIdentifier: MovieDetailImdbCell.getReuseIdentifier())
         table.register(MovieDetailGenreCell.self, forCellReuseIdentifier: MovieDetailGenreCell.getReuseIdentifier())
+        table.register(MovieDetailGenreTitleCell.self, forCellReuseIdentifier: MovieDetailGenreTitleCell.getReuseIdentifier())
         table.register(MovieDetailOriginalCell.self, forCellReuseIdentifier: MovieDetailOriginalCell.getReuseIdentifier())
         table.register(MovieDetailProductionCell.self, forCellReuseIdentifier: MovieDetailProductionCell.getReuseIdentifier())
+        table.register(MovieDetailProductionTitleCell.self, forCellReuseIdentifier: MovieDetailProductionTitleCell.getReuseIdentifier())
         table.register(MovieDetailCountryCell.self, forCellReuseIdentifier: MovieDetailCountryCell.getReuseIdentifier())
+        table.register(MovieDetailCountryTitleCell.self, forCellReuseIdentifier: MovieDetailCountryTitleCell.getReuseIdentifier())
         table.register(MovieDetailRevenueCell.self, forCellReuseIdentifier: MovieDetailRevenueCell.getReuseIdentifier())
         table.register(MovieDetailBudgetCell.self, forCellReuseIdentifier: MovieDetailBudgetCell.getReuseIdentifier())
     }
@@ -121,6 +124,11 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             let cell: MovieDetailImdbCell = tableView.dequeue(indexPath)
             cell.setup(imdbUrl: imdbUrl)
             return cell
+
+        case .genreTitle(let title):
+            let cell: MovieDetailGenreTitleCell = tableView.dequeue(indexPath)
+            cell.setup(title: title)
+            return cell
             
         case .genre(let genre):
             let cell: MovieDetailGenreCell = tableView.dequeue(indexPath)
@@ -131,15 +139,23 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             let cell: MovieDetailOriginalCell = tableView.dequeue(indexPath)
             cell.setup(title: title)
             return cell
+
+        case .productionTitle:
+            let cell: MovieDetailProductionTitleCell = tableView.dequeue(indexPath)
+            return cell
             
         case .production(let company):
             let cell: MovieDetailProductionCell = tableView.dequeue(indexPath)
             cell.setup(company: company)
             return cell
+
+        case .countryTitle:
+            let cell: MovieDetailCountryTitleCell = tableView.dequeue(indexPath)
+            return cell
             
         case .country(let country):
             let cell: MovieDetailCountryCell = tableView.dequeue(indexPath)
-            cell.setup(country: country)
+            cell.setup(country: country.name, isoCode: country.iso31661)
             return cell
             
         case .revenue(let revenue):
@@ -164,7 +180,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             return UIScreen.main.bounds.width * 0.8
             
         case .rating:
-            return 45
+            return 35
             
         case .tagline:
             return 50
@@ -178,23 +194,32 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         case .imdb:
             return 35
             
+        case .genreTitle:
+            return 30
+            
         case .genre:
-            return 40 // TODO Calculate
+            return 30
             
         case .original:
-            return 40
+            return 30
+
+        case .productionTitle:
+            return 30
             
         case .production:
-            return 40 // TODO Calculate
+            return 30
+
+        case .countryTitle:
+            return 30
             
         case .country:
-            return 40 // TODO Calculate
+            return 30
             
         case .revenue:
-            return 40 // TODO Calculate
+            return 30
             
         case .budget:
-            return 40 // TODO Calculate
+            return 30
         }
     }
     

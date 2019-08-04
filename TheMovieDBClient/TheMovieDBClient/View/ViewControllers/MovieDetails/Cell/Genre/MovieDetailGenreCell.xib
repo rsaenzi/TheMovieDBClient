@@ -27,20 +27,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60c-2T-oTS" userLabel="Margins">
                             <rect key="frame" x="25" y="0.0" width="350" height="40"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="35d-bt-bNX">
-                                    <rect key="frame" x="0.0" y="7.5" width="25" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="Noa-XZ-Hxd"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orY-af-OX5">
-                                    <rect key="frame" x="33" y="11" width="47" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loreum Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mx-fR-7ul">
-                                    <rect key="frame" x="84" y="11" width="100" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mx-fR-7ul">
+                                    <rect key="frame" x="33" y="11" width="91" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -48,13 +36,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="35d-bt-bNX" firstAttribute="leading" secondItem="60c-2T-oTS" secondAttribute="leading" id="Amd-gc-sjP"/>
-                                <constraint firstItem="9mx-fR-7ul" firstAttribute="centerY" secondItem="orY-af-OX5" secondAttribute="centerY" id="RAp-oO-5Pr"/>
-                                <constraint firstItem="35d-bt-bNX" firstAttribute="width" secondItem="35d-bt-bNX" secondAttribute="height" multiplier="1:1" id="Tc8-dF-ekI"/>
-                                <constraint firstItem="9mx-fR-7ul" firstAttribute="leading" secondItem="orY-af-OX5" secondAttribute="trailing" constant="4" id="Wl0-wC-G3Z"/>
-                                <constraint firstItem="35d-bt-bNX" firstAttribute="centerY" secondItem="60c-2T-oTS" secondAttribute="centerY" id="brS-7g-Xlf"/>
-                                <constraint firstItem="orY-af-OX5" firstAttribute="leading" secondItem="35d-bt-bNX" secondAttribute="trailing" constant="8" id="rgM-EU-JyV"/>
-                                <constraint firstItem="orY-af-OX5" firstAttribute="centerY" secondItem="35d-bt-bNX" secondAttribute="centerY" id="sjt-cm-s0s"/>
+                                <constraint firstItem="9mx-fR-7ul" firstAttribute="centerY" secondItem="60c-2T-oTS" secondAttribute="centerY" id="KGY-WR-zA4"/>
+                                <constraint firstItem="9mx-fR-7ul" firstAttribute="leading" secondItem="60c-2T-oTS" secondAttribute="leading" constant="33" id="ugs-UT-pAL"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -79,7 +62,4 @@
             <point key="canvasLocation" x="47.826086956521742" y="-77.008928571428569"/>
         </view>
     </objects>
-    <resources>
-        <image name="StarWhite" width="128" height="128"/>
-    </resources>
 </document>

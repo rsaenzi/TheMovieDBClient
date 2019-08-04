@@ -15,9 +15,12 @@ enum MovieDetailItem {
     case overview(overview: String)
     case homepage(homepage: String)
     case imdb(imdbUrl: String)
+    case genreTitle(title: String)
     case genre(genre: Genre)
     case original(title: String)
+    case productionTitle
     case production(company: ProductionCompany)
+    case countryTitle
     case country(country: ProductionCountry)
     case revenue(revenue: String)
     case budget(budget: String)

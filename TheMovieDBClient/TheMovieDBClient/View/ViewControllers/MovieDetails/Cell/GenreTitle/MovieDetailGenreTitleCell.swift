@@ -1,20 +1,20 @@
 //
-//  MovieDetailCountryCell.swift
+//  MovieDetailGenreTitleCell.swift
 //  TheMovieDBClient
 //
-//  Created by Rigoberto Saenz Imbacuan on 7/24/19.
+//  Created by Rigoberto Saenz Imbacuan on 8/3/19.
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
 import UIKit
 
-class MovieDetailCountryCell: UITableViewCell {
+class MovieDetailGenreTitleCell: UITableViewCell {
     
     // This property must be bound to the whole view in Interface Builder
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    @IBOutlet private weak var countryLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     
     // From Code
@@ -48,9 +48,9 @@ class MovieDetailCountryCell: UITableViewCell {
 }
 
 // MARK: Data
-extension MovieDetailCountryCell {
+extension MovieDetailGenreTitleCell {
     
-    func setup(country: String, isoCode: String) {
-        countryLabel.text = "\(country) (\(isoCode))"
+    func setup(title: String) {
+        titleLabel.text = title
     }
 }

@@ -70,19 +70,33 @@ extension MovieDetailsPresenter {
         
         detailItems.append(.rating(rating: movie.voteAverage, releaseDate: movie.releaseDate))
 
+        if movie.genres.count == 1 {
+            let title = "Genre:"
+            detailItems.append(.genreTitle(title: title))
+            
+        } else if movie.genres.count > 1 {
+            let title = "Genres:"
+            detailItems.append(.genreTitle(title: title))
+        }
         for genre in movie.genres {
             detailItems.append(.genre(genre: genre))
         }
 
-        detailItems.append(.original(title: movie.originalTitle))
-
+        if movie.productionCompanies.count > 0 {
+            detailItems.append(.productionTitle)
+        }
         for company in movie.productionCompanies {
             detailItems.append(.production(company: company))
         }
 
+        if movie.productionCountries.count > 0 {
+            detailItems.append(.countryTitle)
+        }
         for country in movie.productionCountries {
             detailItems.append(.country(country: country))
         }
+        
+        detailItems.append(.original(title: movie.originalTitle))
         
         if movie.revenue > 0, let revenueInDollars = dollarCurrency.string(from: NSNumber(value: movie.revenue)) {
             detailItems.append(.revenue(revenue: revenueInDollars))
