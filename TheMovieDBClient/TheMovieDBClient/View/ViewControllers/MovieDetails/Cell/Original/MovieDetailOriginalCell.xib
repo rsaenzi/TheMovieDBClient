@@ -39,8 +39,8 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-xF-RSm">
-                                    <rect key="frame" x="33" y="31.5" width="317" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-xF-RSm">
+                                    <rect key="frame" x="33" y="33.5" width="317" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                 <constraint firstAttribute="trailing" secondItem="ugf-xF-RSm" secondAttribute="trailing" id="9hF-Jj-rOZ"/>
                                 <constraint firstItem="kLc-ll-FGY" firstAttribute="centerY" secondItem="jbb-iE-vXE" secondAttribute="centerY" id="FCX-QZ-duG"/>
                                 <constraint firstItem="jbb-iE-vXE" firstAttribute="width" secondItem="jbb-iE-vXE" secondAttribute="height" multiplier="1:1" id="H2p-fD-ucM"/>
-                                <constraint firstItem="ugf-xF-RSm" firstAttribute="top" secondItem="kLc-ll-FGY" secondAttribute="bottom" constant="8" id="bNW-eb-sgC"/>
+                                <constraint firstItem="ugf-xF-RSm" firstAttribute="top" secondItem="kLc-ll-FGY" secondAttribute="bottom" constant="10" id="bNW-eb-sgC"/>
                                 <constraint firstItem="jbb-iE-vXE" firstAttribute="leading" secondItem="Nyj-C9-m1Z" secondAttribute="leading" id="jDe-nI-eoi"/>
                                 <constraint firstItem="ugf-xF-RSm" firstAttribute="leading" secondItem="kLc-ll-FGY" secondAttribute="leading" id="qX3-3T-DNQ"/>
                                 <constraint firstItem="kLc-ll-FGY" firstAttribute="leading" secondItem="jbb-iE-vXE" secondAttribute="trailing" constant="8" id="y50-mZ-aAC"/>

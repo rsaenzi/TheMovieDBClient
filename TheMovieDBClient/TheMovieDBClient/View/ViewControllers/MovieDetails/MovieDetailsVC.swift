@@ -208,7 +208,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             return 40
         
         case .original:
-            return 55
+            return 58
             
         case .revenue, .budget:
             return 35

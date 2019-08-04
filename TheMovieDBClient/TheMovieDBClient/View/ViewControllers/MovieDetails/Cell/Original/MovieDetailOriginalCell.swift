@@ -56,9 +56,9 @@ extension MovieDetailOriginalCell {
     func setup(title: String, language: String) {
         
         if language.count > 0 {
-            originalTitleLabel.text = "\(title) (\(language.uppercased()))"
+            originalTitleLabel.text = "∙  \(title) (\(language.uppercased()))"
         } else {
-            originalTitleLabel.text = title
+            originalTitleLabel.text = "∙  \(title)"
         }
     }
 }

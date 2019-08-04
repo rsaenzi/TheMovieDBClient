@@ -28,28 +28,33 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7L-fZ-VKB" userLabel="Margins">
                             <rect key="frame" x="25" y="0.0" width="350" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-uG-E2C">
-                                    <rect key="frame" x="89" y="11" width="261" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u09-10-DQG" userLabel="Frame">
-                                    <rect key="frame" x="33" y="4" width="48" height="32"/>
+                                    <rect key="frame" x="33" y="4" width="64" height="32"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s5Y-k2-vyi">
-                                            <rect key="frame" x="1" y="1" width="46" height="30"/>
+                                            <rect key="frame" x="1" y="1" width="62" height="30"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.68205207586288452" green="0.45697205001137275" blue="0.54804606409636336" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.53414498730964466" green="0.35787491672887628" blue="0.42919898393609246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="u09-10-DQG" secondAttribute="height" multiplier="3:2" id="Pno-Eo-dXL"/>
+                                        <constraint firstAttribute="width" secondItem="u09-10-DQG" secondAttribute="height" multiplier="4:2" id="Pno-Eo-dXL"/>
                                         <constraint firstItem="s5Y-k2-vyi" firstAttribute="leading" secondItem="u09-10-DQG" secondAttribute="leading" constant="1" id="Uad-SU-Px5"/>
                                         <constraint firstAttribute="bottom" secondItem="s5Y-k2-vyi" secondAttribute="bottom" constant="1" id="fcf-BD-7NF"/>
                                         <constraint firstAttribute="trailing" secondItem="s5Y-k2-vyi" secondAttribute="trailing" constant="1" id="r8e-ij-mV1"/>
                                         <constraint firstItem="s5Y-k2-vyi" firstAttribute="top" secondItem="u09-10-DQG" secondAttribute="top" constant="1" id="zGl-ne-m6z"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-uG-E2C">
+                                    <rect key="frame" x="105" y="11" width="245" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
