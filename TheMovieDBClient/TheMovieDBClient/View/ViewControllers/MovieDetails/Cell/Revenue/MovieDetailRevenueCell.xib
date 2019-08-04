@@ -27,7 +27,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoS-zT-BZR" userLabel="Margins">
                             <rect key="frame" x="25" y="0.0" width="350" height="40"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CFg-fU-3Ji">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CurrencyWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CFg-fU-3Ji">
                                     <rect key="frame" x="0.0" y="7.5" width="25" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="xo5-VK-aTC"/>
@@ -81,6 +81,6 @@
         </view>
     </objects>
     <resources>
-        <image name="StarWhite" width="128" height="128"/>
+        <image name="CurrencyWhite" width="256" height="256"/>
     </resources>
 </document>

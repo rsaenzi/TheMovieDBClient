@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.merqueo.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="szK-y7-3hc">
-                            <rect key="frame" x="25" y="8" width="350" height="20.5"/>
+                            <rect key="frame" x="25" y="12" width="350" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="mainBlue"/>
                             <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="szK-y7-3hc" secondAttribute="trailing" constant="25" id="Hi6-S4-r3V"/>
-                        <constraint firstItem="szK-y7-3hc" firstAttribute="top" secondItem="YJb-fb-Rxd" secondAttribute="top" constant="8" id="epm-cm-Jg2"/>
+                        <constraint firstItem="szK-y7-3hc" firstAttribute="top" secondItem="YJb-fb-Rxd" secondAttribute="top" constant="12" id="epm-cm-Jg2"/>
                         <constraint firstItem="szK-y7-3hc" firstAttribute="leading" secondItem="YJb-fb-Rxd" secondAttribute="leading" constant="25" id="n1r-xi-XlG"/>
                     </constraints>
                 </view>

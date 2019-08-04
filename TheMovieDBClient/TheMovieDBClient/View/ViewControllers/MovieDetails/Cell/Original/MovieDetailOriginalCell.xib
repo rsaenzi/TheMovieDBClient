@@ -27,7 +27,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyj-C9-m1Z" userLabel="Margins">
                             <rect key="frame" x="25" y="0.0" width="350" height="54"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="jbb-iE-vXE">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OriginalWhite" translatesAutoresizingMaskIntoConstraints="NO" id="jbb-iE-vXE">
                                     <rect key="frame" x="0.0" y="2" width="25" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="8Ws-Z1-2oQ"/>
@@ -81,6 +81,6 @@
         </view>
     </objects>
     <resources>
-        <image name="StarWhite" width="128" height="128"/>
+        <image name="OriginalWhite" width="225" height="225"/>
     </resources>
 </document>
