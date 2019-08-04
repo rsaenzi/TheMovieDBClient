@@ -10,7 +10,6 @@ import UIKit
 import Hero
 import RxSwift
 import RxCocoa
-import KVNProgress
 import Kingfisher
 
 class MovieDetailsVC: UIViewController {
@@ -22,12 +21,12 @@ class MovieDetailsVC: UIViewController {
     private var presenter: MovieDetailsPresenter!
     
     // MARK: Data
+    private var taglineCellHeight: CGFloat = 0
+    private var overviewCellHeight: CGFloat = 0
     private var movie: MovieResult!
     
     // MARK: Bindings
     private let bag = DisposeBag()
-    
-    private var overviewCellHeight: CGFloat = 0
 }
 
 // MARK: Life Cycle
@@ -73,6 +72,7 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
     private func registerCells() {
         table.register(MovieDetailHeaderCell.self, forCellReuseIdentifier: MovieDetailHeaderCell.getReuseIdentifier())
         table.register(MovieDetailRatingCell.self, forCellReuseIdentifier: MovieDetailRatingCell.getReuseIdentifier())
+        table.register(MovieDetailReleaseCell.self, forCellReuseIdentifier: MovieDetailReleaseCell.getReuseIdentifier())
         table.register(MovieDetailTaglineCell.self, forCellReuseIdentifier: MovieDetailTaglineCell.getReuseIdentifier())
         table.register(MovieDetailOverviewCell.self, forCellReuseIdentifier: MovieDetailOverviewCell.getReuseIdentifier())
         table.register(MovieDetailHomepageCell.self, forCellReuseIdentifier: MovieDetailHomepageCell.getReuseIdentifier())
@@ -80,8 +80,8 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         table.register(MovieDetailGenreCell.self, forCellReuseIdentifier: MovieDetailGenreCell.getReuseIdentifier())
         table.register(MovieDetailGenreTitleCell.self, forCellReuseIdentifier: MovieDetailGenreTitleCell.getReuseIdentifier())
         table.register(MovieDetailOriginalCell.self, forCellReuseIdentifier: MovieDetailOriginalCell.getReuseIdentifier())
-        table.register(MovieDetailProductionCell.self, forCellReuseIdentifier: MovieDetailProductionCell.getReuseIdentifier())
-        table.register(MovieDetailProductionTitleCell.self, forCellReuseIdentifier: MovieDetailProductionTitleCell.getReuseIdentifier())
+        table.register(MovieDetailCompanyCell.self, forCellReuseIdentifier: MovieDetailCompanyCell.getReuseIdentifier())
+        table.register(MovieDetailCompanyTitleCell.self, forCellReuseIdentifier: MovieDetailCompanyTitleCell.getReuseIdentifier())
         table.register(MovieDetailCountryCell.self, forCellReuseIdentifier: MovieDetailCountryCell.getReuseIdentifier())
         table.register(MovieDetailCountryTitleCell.self, forCellReuseIdentifier: MovieDetailCountryTitleCell.getReuseIdentifier())
         table.register(MovieDetailRevenueCell.self, forCellReuseIdentifier: MovieDetailRevenueCell.getReuseIdentifier())
@@ -99,14 +99,20 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             cell.setup(title: title, backdropUrl: backdropImage, posterUrl: posterImage)
             return cell
 
-        case .rating(let rating, let releaseDate):
+        case .rating(let rating, let count):
             let cell: MovieDetailRatingCell = tableView.dequeue(indexPath)
-            cell.setup(rating: rating, releaseDate: releaseDate)
+            cell.setup(rating: rating, count: count)
+            return cell
+            
+        case .release(let releaseDate):
+            let cell: MovieDetailReleaseCell = tableView.dequeue(indexPath)
+            cell.setup(releaseDate: releaseDate)
             return cell
             
         case .tagline(let tagline):
             let cell: MovieDetailTaglineCell = tableView.dequeue(indexPath)
             cell.setup(tagline: tagline)
+            taglineCellHeight = cell.calculateCellHeight()
             return cell
             
         case .overview(let overview):
@@ -135,27 +141,27 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
             cell.setup(genre: genre)
             return cell
             
-        case .original(let title):
+        case .original(let title, let language):
             let cell: MovieDetailOriginalCell = tableView.dequeue(indexPath)
-            cell.setup(title: title)
+            cell.setup(title: title, language: language)
             return cell
 
-        case .productionTitle:
-            let cell: MovieDetailProductionTitleCell = tableView.dequeue(indexPath)
+        case .companyTitle:
+            let cell: MovieDetailCompanyTitleCell = tableView.dequeue(indexPath)
             return cell
             
-        case .production(let company):
-            let cell: MovieDetailProductionCell = tableView.dequeue(indexPath)
-            cell.setup(company: company)
+        case .company(let company, let logoPath, let originCountry):
+            let cell: MovieDetailCompanyCell = tableView.dequeue(indexPath)
+            cell.setup(name: company, logoPath: logoPath, originCountry: originCountry)
             return cell
 
         case .countryTitle:
             let cell: MovieDetailCountryTitleCell = tableView.dequeue(indexPath)
             return cell
             
-        case .country(let country):
+        case .country(let country, let isoCode):
             let cell: MovieDetailCountryCell = tableView.dequeue(indexPath)
-            cell.setup(country: country.name, isoCode: country.iso31661)
+            cell.setup(country: country, isoCode: isoCode)
             return cell
             
         case .revenue(let revenue):
@@ -177,49 +183,38 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         switch detailItem {
             
         case .header:
-            return UIScreen.main.bounds.width * 0.8
-            
-        case .rating:
-            return 35
+            return (UIScreen.main.bounds.width * 0.8) + 8
             
         case .tagline:
-            return 50
+            return taglineCellHeight
+            
+        case .homepage:
+            return 40
             
         case .overview:
             return overviewCellHeight
             
-        case .homepage:
+        case .rating, .release:
+            return 35
+            
+        case .genreTitle, .companyTitle, .countryTitle:
+            return 30
+            
+            
+        case .genre, .country:
+            return 28
+            
+        case .company:
+            return 40
+        
+        case .original:
+            return 55
+            
+        case .revenue, .budget:
             return 35
             
         case .imdb:
-            return 35
-            
-        case .genreTitle:
-            return 30
-            
-        case .genre:
-            return 30
-            
-        case .original:
-            return 30
-
-        case .productionTitle:
-            return 30
-            
-        case .production:
-            return 30
-
-        case .countryTitle:
-            return 30
-            
-        case .country:
-            return 30
-            
-        case .revenue:
-            return 30
-            
-        case .budget:
-            return 30
+            return 60
         }
     }
     

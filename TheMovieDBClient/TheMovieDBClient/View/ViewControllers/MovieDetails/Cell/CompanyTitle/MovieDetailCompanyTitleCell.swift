@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieDetailProductionTitleCell: UITableViewCell {
+class MovieDetailCompanyTitleCell: UITableViewCell {
     
     // This property must be bound to the whole view in Interface Builder
     @IBOutlet private weak var allContentView: UIView!

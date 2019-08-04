@@ -1,5 +1,5 @@
 //
-//  MovieDetailOriginalCell.swift
+//  MovieDetailCompanyCell.swift
 //  TheMovieDBClient
 //
 //  Created by Rigoberto Saenz Imbacuan on 7/24/19.
@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
-class MovieDetailOriginalCell: UITableViewCell {
+class MovieDetailCompanyCell: UITableViewCell {
     
     // This property must be bound to the whole view in Interface Builder
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    @IBOutlet private weak var originalTitleLabel: UILabel!
+    @IBOutlet private weak var companyImage: UIImageView!
+    @IBOutlet private weak var companyLabel: UILabel!
+    @IBOutlet private weak var countryLabel: UILabel!
     
     
     // From Code
@@ -48,14 +51,32 @@ class MovieDetailOriginalCell: UITableViewCell {
 }
 
 // MARK: Data
-extension MovieDetailOriginalCell {
+extension MovieDetailCompanyCell {
     
-    func setup(title: String, language: String) {
+    func setup(name: String, logoPath: String?, originCountry: String) {
         
-        if language.count > 0 {
-            originalTitleLabel.text = "\(title) (\(language.uppercased()))"
+        if originCountry.count > 0 {
+            companyLabel.text = "\(name) (\(originCountry))"
         } else {
-            originalTitleLabel.text = title
+            companyLabel.text = name
         }
+        
+        guard let logoImageUrl = logoPath,
+              let logoResourceUrl = URL(string: logoImageUrl) else {
+                
+            companyImage.image = Image.AppIconWhite.image()
+            return
+        }
+        
+        let posterPlaceholder = Image.AppIconWhite.image()
+        let posterResource = ImageResource(downloadURL: logoResourceUrl, cacheKey: logoImageUrl)
+        let options: [KingfisherOptionsInfoItem] = [.transition(.fade(0.5)), .cacheOriginalImage]
+        
+        companyImage.kf.setImage(
+            with: posterResource,
+            placeholder: posterPlaceholder,
+            options: options,
+            progressBlock: nil,
+            completionHandler: { _ in })
     }
 }

@@ -68,7 +68,8 @@ extension MovieDetailsPresenter {
             detailItems.append(.overview(overview: overview))
         }
         
-        detailItems.append(.rating(rating: movie.voteAverage, releaseDate: movie.releaseDate))
+        detailItems.append(.rating(rating: "\(movie.voteAverage)", count: "\(movie.voteCount)"))
+        detailItems.append(.release(releaseDate: movie.releaseDate))
 
         if movie.genres.count == 1 {
             let title = "Genre:"
@@ -79,31 +80,31 @@ extension MovieDetailsPresenter {
             detailItems.append(.genreTitle(title: title))
         }
         for genre in movie.genres {
-            detailItems.append(.genre(genre: genre))
+            detailItems.append(.genre(genre: genre.name))
         }
 
         if movie.productionCompanies.count > 0 {
-            detailItems.append(.productionTitle)
+            detailItems.append(.companyTitle)
         }
         for company in movie.productionCompanies {
-            detailItems.append(.production(company: company))
+            detailItems.append(.company(company: company.name, logoPath: company.getLogoPathImage(), originCountry: company.originCountry))
         }
 
         if movie.productionCountries.count > 0 {
             detailItems.append(.countryTitle)
         }
         for country in movie.productionCountries {
-            detailItems.append(.country(country: country))
+            detailItems.append(.country(country: country.name, isoCode: country.iso31661))
         }
         
-        detailItems.append(.original(title: movie.originalTitle))
+        detailItems.append(.original(title: movie.originalTitle, language: movie.originalLanguage))
         
         if movie.revenue > 0, let revenueInDollars = dollarCurrency.string(from: NSNumber(value: movie.revenue)) {
-            detailItems.append(.revenue(revenue: revenueInDollars))
+            detailItems.append(.revenue(revenue: "\(revenueInDollars) USD"))
         }
 
         if movie.budget > 0, let budgetInDollars = dollarCurrency.string(from: NSNumber(value: movie.budget)) {
-            detailItems.append(.budget(budget: budgetInDollars))
+            detailItems.append(.budget(budget: "\(budgetInDollars) USD"))
         }
         
         if let imdbId = movie.imdbId, imdbId.count > 0 {

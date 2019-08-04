@@ -1,20 +1,20 @@
 //
-//  MovieDetailProductionCell.swift
+//  MovieDetailReleaseCell.swift
 //  TheMovieDBClient
 //
-//  Created by Rigoberto Saenz Imbacuan on 7/24/19.
+//  Created by Rigoberto Saenz Imbacuan on 8/3/19.
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
 import UIKit
 
-class MovieDetailProductionCell: UITableViewCell {
+class MovieDetailReleaseCell: UITableViewCell {
     
     // This property must be bound to the whole view in Interface Builder
     @IBOutlet private weak var allContentView: UIView!
     
     // MARK: Outlets
-    @IBOutlet private weak var productionLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
     
     
     // From Code
@@ -48,9 +48,9 @@ class MovieDetailProductionCell: UITableViewCell {
 }
 
 // MARK: Data
-extension MovieDetailProductionCell {
+extension MovieDetailReleaseCell {
     
-    func setup(company: ProductionCompany) {
-        productionLabel.text = company.name
+    func setup(releaseDate: String) {
+        releaseDateLabel.text = releaseDate
     }
 }

@@ -53,4 +53,8 @@ extension MovieDetailTaglineCell {
     func setup(tagline: String) {
         taglineLabel.text = tagline
     }
+    
+    func calculateCellHeight() -> CGFloat {
+        return taglineLabel.calculateHeight() + 10
+    }
 }

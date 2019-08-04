@@ -28,7 +28,7 @@
                             <rect key="frame" x="25" y="0.0" width="350" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8m-Be-r4D">
-                                    <rect key="frame" x="33" y="11" width="91" height="18"/>
+                                    <rect key="frame" x="33" y="11" width="317" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="M8m-Be-r4D" firstAttribute="leading" secondItem="IFl-la-QMY" secondAttribute="leading" constant="33" id="N3n-69-p2v"/>
+                                <constraint firstAttribute="trailing" secondItem="M8m-Be-r4D" secondAttribute="trailing" id="Z6W-OR-Mov"/>
                                 <constraint firstItem="M8m-Be-r4D" firstAttribute="centerY" secondItem="IFl-la-QMY" secondAttribute="centerY" id="nw7-EM-U8F"/>
                             </constraints>
                         </view>

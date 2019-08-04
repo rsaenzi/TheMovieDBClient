@@ -50,7 +50,7 @@ class MovieDetailGenreCell: UITableViewCell {
 // MARK: Data
 extension MovieDetailGenreCell {
     
-    func setup(genre: Genre) {
-        genreLabel.text = genre.name
+    func setup(genre: String) {
+        genreLabel.text = "∙  \(genre)"
     }
 }

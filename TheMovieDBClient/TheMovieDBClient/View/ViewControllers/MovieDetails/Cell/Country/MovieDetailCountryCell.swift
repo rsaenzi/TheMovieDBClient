@@ -51,6 +51,6 @@ class MovieDetailCountryCell: UITableViewCell {
 extension MovieDetailCountryCell {
     
     func setup(country: String, isoCode: String) {
-        countryLabel.text = "\(country) (\(isoCode))"
+        countryLabel.text = "∙  \(country) (\(isoCode))"
     }
 }

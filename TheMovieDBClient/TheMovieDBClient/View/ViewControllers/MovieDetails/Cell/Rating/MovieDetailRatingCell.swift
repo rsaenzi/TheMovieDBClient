@@ -15,7 +15,6 @@ class MovieDetailRatingCell: UITableViewCell {
     
     // MARK: Outlets
     @IBOutlet private weak var ratingLabel: UILabel!
-    @IBOutlet private weak var releaseDateLabel: UILabel!
     
     
     // From Code
@@ -51,8 +50,7 @@ class MovieDetailRatingCell: UITableViewCell {
 // MARK: Data
 extension MovieDetailRatingCell {
     
-    func setup(rating: Float, releaseDate: String) {
-        ratingLabel.text = String(rating)
-        releaseDateLabel.text = releaseDate
+    func setup(rating: String, count: String) {
+        ratingLabel.text = "\(rating)  (\(count) votes)"
     }
 }
