@@ -43,7 +43,7 @@ class ApiRequest {
         let provider: MoyaProvider<ApiEndpoint>
         
         if Test.isTesting() {
-            provider = MoyaProvider<ApiEndpoint>.init(stubClosure: MoyaProvider.delayedStub(1), plugins: plugins)
+            provider = MoyaProvider<ApiEndpoint>.init(stubClosure: MoyaProvider.delayedStub(0.5), plugins: plugins)
         } else {
             provider = MoyaProvider<ApiEndpoint>(plugins: plugins)
         }
