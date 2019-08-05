@@ -53,23 +53,35 @@ You need to have a macbook having one of the lastest versions of macOS, and have
 pod install
 ```
 
-Then open TheMovieDBClient.xcworkspace using Xcode.
+![PodInstall](https://github.com/rsaenzi/TheMovieDBClient/blob/master/Screenshots/PodInstall.png)
+
+Then open TheMovieDBClient.xcworkspace using Xcode:
+
+![Xcworkspace](https://github.com/rsaenzi/TheMovieDBClient/blob/master/Screenshots/Xcworkspace.png)
+
+## First time run
 
 When installing the app on a device from Xcode the first time, Xcode will display the following error:
 
+![XcodeError](https://github.com/rsaenzi/TheMovieDBClient/blob/master/Screenshots/XcodeError.png)
+
+To fix that, please go to **Settings** > **General** > **Profiles & Device Management**, tap on **Developer App**, then select **Trust**:
+
+.
 <table border="0">
 <tr><td>
   
 ![Trust1](https://github.com/rsaenzi/TheMovieDBClient/blob/master/Screenshots/Trust1.PNG)
+
 </td><td>
 
 ![Trust2](https://github.com/rsaenzi/TheMovieDBClient/blob/master/Screenshots/Trust2.PNG)
+
 </td></tr>
 </table>
+.
 
-To fix that, please go to Settings > General > Profiles & Device Management, tap on Developer App, then select Trust:
-
-Then launch the app again, now it will run :)
+Then launch the app from Xcode again, now it will run :)
 
 ## Screenshots
 
