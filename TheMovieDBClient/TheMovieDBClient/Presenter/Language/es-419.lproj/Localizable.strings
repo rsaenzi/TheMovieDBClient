@@ -12,8 +12,6 @@
 "appName" = "MerqueMovie";
 
 // Movie Catalog
-"movieCatalogCredentialsError" = "";
-"movieCatalogGeneralError" = "";
-"movieCatalogServerError" = "";
-
-// TODO add here
+"movieCatalogCredentialsError" = "Credenciales inválidas, porfavor intente nuevamente mas tarde";
+"movieCatalogGeneralError" = "Un error interno ha sucedido, porfavor intente nuevamente mas tarde";
+"movieCatalogServerError" = "El servidor no está retornado datos, porfavor intente nuevamente mas tarde";
