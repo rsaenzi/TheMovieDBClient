@@ -1,18 +1,19 @@
 //
-//  TheMovieDBClientTests.swift
+//  GetMovieDetailsInteractorTests.swift
 //  TheMovieDBClientTests
 //
-//  Created by Rigoberto Saenz Imbacuan on 7/16/19.
+//  Created by Rigoberto Saenz Imbacuan on 8/4/19.
 //  Copyright © 2019 Rigoberto Saenz Imbacuan. All rights reserved.
 //
 
 import XCTest
 @testable import TheMovieDBClient
 
-class TheMovieDBClientTests: XCTestCase {
+class GetMovieDetailsInteractorTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        Test.enableTestingMode()
     }
 
     override func tearDown() {

@@ -40,7 +40,14 @@ class ApiRequest {
         }
         
         // Here we perform the request
-        let provider = MoyaProvider<ApiEndpoint>(plugins: plugins)
+        let provider: MoyaProvider<ApiEndpoint>
+        
+        if Test.isTesting() {
+            provider = MoyaProvider<ApiEndpoint>.init(stubClosure: MoyaProvider.delayedStub(1), plugins: plugins)
+        } else {
+            provider = MoyaProvider<ApiEndpoint>(plugins: plugins)
+        }
+        
         provider.request(endpoint) { result in
             
             // Only for debugging

@@ -91,6 +91,6 @@ extension ApiEndpoint: TargetType {
     }
     
     var sampleData: Data {
-        return "".utf8Encoded
+        return Test.getSampleData(for: self).utf8Encoded
     }
 }
