@@ -32,11 +32,16 @@
                                             <outlet property="delegate" destination="L62-JP-ez9" id="4qf-FO-r9k"/>
                                         </connections>
                                     </tableView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="egx-ny-czx">
+                                        <rect key="frame" x="197" y="434.5" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="mainFucsia"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="SLn-yx-zsA" secondAttribute="trailing" id="MHB-x2-J7g"/>
+                                    <constraint firstItem="egx-ny-czx" firstAttribute="centerX" secondItem="SLn-yx-zsA" secondAttribute="centerX" id="b6K-6L-VdK"/>
+                                    <constraint firstItem="egx-ny-czx" firstAttribute="centerY" secondItem="SLn-yx-zsA" secondAttribute="centerY" multiplier="1.1" id="fK1-EP-9Wd"/>
                                     <constraint firstAttribute="bottom" secondItem="SLn-yx-zsA" secondAttribute="bottom" id="jHt-79-FmJ"/>
                                     <constraint firstItem="SLn-yx-zsA" firstAttribute="leading" secondItem="Dvh-bh-OJ9" secondAttribute="leading" id="w0C-OH-5Ep"/>
                                     <constraint firstItem="SLn-yx-zsA" firstAttribute="top" secondItem="Dvh-bh-OJ9" secondAttribute="top" id="yhn-0U-xux"/>
@@ -60,6 +65,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="spinner" destination="egx-ny-czx" id="me8-eC-sR8"/>
                         <outlet property="table" destination="SLn-yx-zsA" id="YkR-EN-OMt"/>
                     </connections>
                 </viewController>

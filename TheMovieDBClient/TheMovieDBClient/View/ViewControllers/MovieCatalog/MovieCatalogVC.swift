@@ -19,6 +19,7 @@ class MovieCatalogVC: UIViewController {
     @IBOutlet private weak var stateNoInternetView: StateNoInternetView!
     @IBOutlet private weak var stateErrorView: StateErrorView!
     @IBOutlet private weak var grid: UICollectionView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     @IBOutlet private var stateViews: [UIView]!
     
     // MARK: Cell Size
@@ -93,6 +94,7 @@ extension MovieCatalogVC {
         for item in stateViews {
             item.isHidden = true
         }
+        spinner.stopAnimating()
     }
     
     private func showContainer(for state: MovieCatalogState) {
@@ -177,6 +179,8 @@ extension MovieCatalogVC: UICollectionViewDelegate {
         
         // If last cells are about to be displayed, next page of movies is requested
         if indexPath.row == presenter.getMoviesCount() - 5 {
+            spinner.startAnimating()
+            spinner.isHidden = false
             presenter.getMoviesNextPage()
         }
     }

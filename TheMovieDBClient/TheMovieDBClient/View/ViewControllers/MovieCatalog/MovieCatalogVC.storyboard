@@ -57,10 +57,15 @@
                                                     <outlet property="delegate" destination="twV-UN-inT" id="lFd-aI-SPp"/>
                                                 </connections>
                                             </collectionView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="sDW-8E-aOq">
+                                                <rect key="frame" x="197" y="738" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="sDW-8E-aOq" firstAttribute="centerX" secondItem="k9z-TJ-H6E" secondAttribute="centerX" id="2SN-mv-Feg"/>
                                             <constraint firstAttribute="trailing" secondItem="k9z-TJ-H6E" secondAttribute="trailing" id="54b-dT-gzI"/>
+                                            <constraint firstItem="sDW-8E-aOq" firstAttribute="bottom" secondItem="k9z-TJ-H6E" secondAttribute="bottom" constant="-50" id="8PA-Qf-33j"/>
                                             <constraint firstItem="k9z-TJ-H6E" firstAttribute="leading" secondItem="hkE-Dd-cMb" secondAttribute="leading" id="9XM-VW-v0c"/>
                                             <constraint firstAttribute="bottom" secondItem="k9z-TJ-H6E" secondAttribute="bottom" id="MQg-8n-quK"/>
                                             <constraint firstItem="k9z-TJ-H6E" firstAttribute="top" secondItem="hkE-Dd-cMb" secondAttribute="top" id="thM-BB-2If"/>
@@ -116,6 +121,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="grid" destination="k9z-TJ-H6E" id="F1H-VE-bnZ"/>
+                        <outlet property="spinner" destination="sDW-8E-aOq" id="pTv-nQ-zdk"/>
                         <outlet property="stateContainer" destination="riP-xp-FRP" id="8SM-cA-Gzd"/>
                         <outlet property="stateErrorView" destination="09T-Bf-H7d" id="fL0-Qz-HZK"/>
                         <outlet property="stateNoInternetView" destination="Ze4-yg-qfI" id="W1F-12-sXR"/>

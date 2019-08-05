@@ -16,6 +16,7 @@ class MovieDetailsVC: UIViewController {
     
     // MARK: Outlets
     @IBOutlet private weak var table: UITableView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     // MARK: Presenter
     private var presenter: MovieDetailsPresenter!
@@ -57,6 +58,7 @@ extension MovieDetailsVC {
                 switch state.element! {
 
                 case .success(let newIndexPaths):
+                    self.spinner.stopAnimating()
                     self.table.insertRows(at: newIndexPaths, with: .fade)
 
                 default:
