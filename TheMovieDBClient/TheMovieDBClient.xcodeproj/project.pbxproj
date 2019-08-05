@@ -290,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				B11E49A422DE92050032EFED /* ViewControllers */,
-				B1D45BE522E6B07A00325AD2 /* CustomViews */,
 				B11E49A522DE92160032EFED /* Assets */,
 				B161093E22E13DE100AF58AD /* Extensions */,
 			);
@@ -339,8 +338,9 @@
 		B112F04F22DE90F2004B56FA /* MovieCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				B130E5CE22E94EAB00BB58CA /* Transition */,
 				B12542A722E52CA600249D88 /* Cell */,
+				B1D45BE522E6B07A00325AD2 /* State */,
+				B130E5CE22E94EAB00BB58CA /* Transition */,
 				B194FA0522E2E5CF007F06F2 /* MovieCatalogVC.storyboard */,
 				B194FA0722E2E5D6007F06F2 /* MovieCatalogVC.swift */,
 			);
@@ -737,51 +737,51 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		B1D45BE522E6B07A00325AD2 /* CustomViews */ = {
+		B1D45BE522E6B07A00325AD2 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				B1D45BFB22E6B29500325AD2 /* StateNoDataView */,
-				B1D45BFA22E6B29400325AD2 /* StateFetchingDataView */,
-				B1D45BF922E6B29200325AD2 /* StateNoInternetView */,
-				B1D45BF822E6B28F00325AD2 /* StateErrorView */,
+				B1D45BFB22E6B29500325AD2 /* NoData */,
+				B1D45BFA22E6B29400325AD2 /* FetchingData */,
+				B1D45BF922E6B29200325AD2 /* NoInternet */,
+				B1D45BF822E6B28F00325AD2 /* Error */,
 			);
-			path = CustomViews;
+			path = State;
 			sourceTree = "<group>";
 		};
-		B1D45BF822E6B28F00325AD2 /* StateErrorView */ = {
+		B1D45BF822E6B28F00325AD2 /* Error */ = {
 			isa = PBXGroup;
 			children = (
 				B1D45BEE22E6B12700325AD2 /* StateErrorView.xib */,
 				B1D45BF622E6B28600325AD2 /* StateErrorView.swift */,
 			);
-			path = StateErrorView;
+			path = Error;
 			sourceTree = "<group>";
 		};
-		B1D45BF922E6B29200325AD2 /* StateNoInternetView */ = {
+		B1D45BF922E6B29200325AD2 /* NoInternet */ = {
 			isa = PBXGroup;
 			children = (
 				B1D45BEA22E6B10A00325AD2 /* StateNoInternetView.xib */,
 				B1D45BF422E6B27B00325AD2 /* StateNoInternetView.swift */,
 			);
-			path = StateNoInternetView;
+			path = NoInternet;
 			sourceTree = "<group>";
 		};
-		B1D45BFA22E6B29400325AD2 /* StateFetchingDataView */ = {
+		B1D45BFA22E6B29400325AD2 /* FetchingData */ = {
 			isa = PBXGroup;
 			children = (
 				B1D45BE822E6B0F700325AD2 /* StateFetchingDataView.xib */,
 				B1D45BF222E6B27000325AD2 /* StateFetchingDataView.swift */,
 			);
-			path = StateFetchingDataView;
+			path = FetchingData;
 			sourceTree = "<group>";
 		};
-		B1D45BFB22E6B29500325AD2 /* StateNoDataView */ = {
+		B1D45BFB22E6B29500325AD2 /* NoData */ = {
 			isa = PBXGroup;
 			children = (
 				B1D45BE622E6B0E100325AD2 /* StateNoDataView.xib */,
 				B1D45BF022E6B26400325AD2 /* StateNoDataView.swift */,
 			);
-			path = StateNoDataView;
+			path = NoData;
 			sourceTree = "<group>";
 		};
 		B1FEA16522EEAFCA002D0C1D /* Budget */ = {

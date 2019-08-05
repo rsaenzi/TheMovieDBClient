@@ -12,6 +12,7 @@ enum Image: String {
     case AppIconWhite
     case CalendarWhite
     case StarWhite
+    case AppTitleIcon
 }
 
 extension Image {

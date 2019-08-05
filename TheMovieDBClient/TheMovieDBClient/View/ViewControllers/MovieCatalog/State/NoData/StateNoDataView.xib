@@ -25,13 +25,13 @@
                     <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconWhite" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-Cc-hJr">
-                            <rect key="frame" x="100" y="69" width="234.5" height="234.5"/>
+                            <rect key="frame" x="141.5" y="110.5" width="151.5" height="151.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ymb-Cc-hJr" secondAttribute="height" multiplier="1:1" id="ppO-rn-LPW"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUX-3o-9mp">
-                            <rect key="frame" x="16" y="320.5" width="382" height="21"/>
+                            <rect key="frame" x="16" y="300" width="382" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -42,9 +42,9 @@
                         <constraint firstItem="ymb-Cc-hJr" firstAttribute="centerX" secondItem="tlW-QH-C8W" secondAttribute="centerX" multiplier="1.05" id="4hs-rs-fdB"/>
                         <constraint firstItem="UUX-3o-9mp" firstAttribute="centerX" secondItem="tlW-QH-C8W" secondAttribute="centerX" id="8qz-cf-3sr"/>
                         <constraint firstAttribute="trailing" secondItem="UUX-3o-9mp" secondAttribute="trailing" constant="16" id="Bcb-X1-7d2"/>
-                        <constraint firstItem="UUX-3o-9mp" firstAttribute="centerY" secondItem="tlW-QH-C8W" secondAttribute="centerY" multiplier="1.6" id="V6J-Q4-dBH"/>
+                        <constraint firstItem="UUX-3o-9mp" firstAttribute="centerY" secondItem="tlW-QH-C8W" secondAttribute="centerY" multiplier="1.5" id="V6J-Q4-dBH"/>
                         <constraint firstItem="UUX-3o-9mp" firstAttribute="leading" secondItem="tlW-QH-C8W" secondAttribute="leading" constant="16" id="Vwz-9J-iTp"/>
-                        <constraint firstItem="ymb-Cc-hJr" firstAttribute="width" secondItem="tlW-QH-C8W" secondAttribute="width" multiplier="0.5" constant="27.5" id="Z0x-Sj-ifB"/>
+                        <constraint firstItem="ymb-Cc-hJr" firstAttribute="width" secondItem="tlW-QH-C8W" secondAttribute="width" multiplier="0.3" constant="27.5" id="Z0x-Sj-ifB"/>
                         <constraint firstItem="ymb-Cc-hJr" firstAttribute="centerY" secondItem="tlW-QH-C8W" secondAttribute="centerY" multiplier="0.9" id="glH-Ts-r8C"/>
                         <constraint firstAttribute="width" secondItem="tlW-QH-C8W" secondAttribute="height" multiplier="1:1" id="zDN-w3-AgW"/>
                     </constraints>

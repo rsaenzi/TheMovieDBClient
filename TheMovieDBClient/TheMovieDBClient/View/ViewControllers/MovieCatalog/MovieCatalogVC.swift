@@ -16,6 +16,8 @@ class MovieCatalogVC: UIViewController {
     
     // MARK: Outlets
     @IBOutlet private weak var stateContainer: UIView!
+    @IBOutlet private weak var stateNoInternetView: StateNoInternetView!
+    @IBOutlet private weak var stateErrorView: StateErrorView!
     @IBOutlet private weak var grid: UICollectionView!
     @IBOutlet private var stateViews: [UIView]!
     
@@ -40,9 +42,9 @@ extension MovieCatalogVC {
         setupBindings()
         
         // Icon on Navigation Bar
-        let titleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let titleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 158, height: 40))
         titleView.contentMode = .scaleAspectFit
-        titleView.image = Image.AppIconWhite.image()
+        titleView.image = Image.AppTitleIcon.image()
         navigationItem.titleView = titleView
     }
     
@@ -57,6 +59,22 @@ extension MovieCatalogVC {
 
     private func setupBindings() {
         
+        // Buttons
+        stateNoInternetView.tryAgainButton.rx.tap
+            .subscribe{ [weak self] _ in
+                guard let `self` = self else { return }
+                self.presenter.reset()
+                self.presenter.getMoviesFirstPage()
+            }.disposed(by: bag)
+        
+        stateErrorView.tryAgainButton.rx.tap
+            .subscribe{ [weak self] _ in
+                guard let `self` = self else { return }
+                self.presenter.reset()
+                self.presenter.getMoviesFirstPage()
+            }.disposed(by: bag)
+        
+        // State
         presenter.state
             .subscribe { [weak self] state in
                 guard let `self` = self else { return }

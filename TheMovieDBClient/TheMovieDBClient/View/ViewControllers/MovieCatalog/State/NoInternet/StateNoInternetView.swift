@@ -1,5 +1,5 @@
 //
-//  StateErrorView.swift
+//  StateNoInternetView.swift
 //  TheMovieDBClient
 //
 //  Created by Rigoberto Saenz Imbacuan on 7/22/19.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class StateErrorView: UIView {
+class StateNoInternetView: UIView {
 
     // This property must be bound to the whole view in Interface Builder
     @IBOutlet private weak var contentView: UIView!
+    @IBOutlet public weak var tryAgainButton: UIButton!
     
     // From Code
     override init(frame: CGRect) {
@@ -27,7 +28,7 @@ class StateErrorView: UIView {
 }
 
 // MARK: Init
-extension StateErrorView {
+extension StateNoInternetView {
     
     private func commonInit() {
         

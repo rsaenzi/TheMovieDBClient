@@ -69,6 +69,12 @@ extension MovieCatalogPresenter {
 
 // MARK: Actions
 extension MovieCatalogPresenter {
+    
+    func reset() {
+        movies = []
+        currentPage = 1
+        fetchingPage = false
+    }
 
     func getMoviesFirstPage() {
         

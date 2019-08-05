@@ -117,6 +117,8 @@
                     <connections>
                         <outlet property="grid" destination="k9z-TJ-H6E" id="F1H-VE-bnZ"/>
                         <outlet property="stateContainer" destination="riP-xp-FRP" id="8SM-cA-Gzd"/>
+                        <outlet property="stateErrorView" destination="09T-Bf-H7d" id="fL0-Qz-HZK"/>
+                        <outlet property="stateNoInternetView" destination="Ze4-yg-qfI" id="W1F-12-sXR"/>
                         <outletCollection property="stateViews" destination="MbN-2y-aXv" collectionClass="NSMutableArray" id="99w-Cx-B7K"/>
                         <outletCollection property="stateViews" destination="NjM-nP-Rdm" collectionClass="NSMutableArray" id="hcU-IQ-UsN"/>
                         <outletCollection property="stateViews" destination="hkE-Dd-cMb" collectionClass="NSMutableArray" id="vFK-CN-fJb"/>

@@ -25,13 +25,13 @@
                     <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownloadingWhite" translatesAutoresizingMaskIntoConstraints="NO" id="IAr-IK-ILe">
-                            <rect key="frame" x="90" y="69" width="234.5" height="234.5"/>
+                            <rect key="frame" x="131" y="110.5" width="152" height="151.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IAr-IK-ILe" secondAttribute="height" multiplier="1:1" id="0Xn-2L-GFv"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching movies..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSu-OK-4JO">
-                            <rect key="frame" x="16" y="341.5" width="382" height="21"/>
+                            <rect key="frame" x="16" y="300" width="382" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -39,10 +39,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="IAr-IK-ILe" firstAttribute="width" secondItem="qyM-lv-F9b" secondAttribute="width" multiplier="0.5" constant="27.5" id="0zy-pc-OY8"/>
+                        <constraint firstItem="IAr-IK-ILe" firstAttribute="width" secondItem="qyM-lv-F9b" secondAttribute="width" multiplier="0.3" constant="27.5" id="0zy-pc-OY8"/>
                         <constraint firstAttribute="trailing" secondItem="DSu-OK-4JO" secondAttribute="trailing" constant="16" id="7Fp-5d-b71"/>
                         <constraint firstAttribute="width" secondItem="qyM-lv-F9b" secondAttribute="height" multiplier="1:1" id="MAV-nS-9ZR"/>
-                        <constraint firstItem="DSu-OK-4JO" firstAttribute="centerY" secondItem="qyM-lv-F9b" secondAttribute="centerY" multiplier="1.7" id="cBB-5g-4bI"/>
+                        <constraint firstItem="DSu-OK-4JO" firstAttribute="centerY" secondItem="qyM-lv-F9b" secondAttribute="centerY" multiplier="1.5" id="cBB-5g-4bI"/>
                         <constraint firstItem="IAr-IK-ILe" firstAttribute="centerY" secondItem="qyM-lv-F9b" secondAttribute="centerY" multiplier="0.9" id="oHh-h5-fTX"/>
                         <constraint firstItem="DSu-OK-4JO" firstAttribute="centerX" secondItem="qyM-lv-F9b" secondAttribute="centerX" id="pcS-0c-Meh"/>
                         <constraint firstItem="DSu-OK-4JO" firstAttribute="leading" secondItem="qyM-lv-F9b" secondAttribute="leading" constant="16" id="pth-37-5bf"/>

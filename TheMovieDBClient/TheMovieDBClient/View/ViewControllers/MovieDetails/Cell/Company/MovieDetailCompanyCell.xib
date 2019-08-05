@@ -35,7 +35,7 @@
                                             <rect key="frame" x="1" y="1" width="62" height="30"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.53414498730964466" green="0.35787491672887628" blue="0.42919898393609246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="u09-10-DQG" secondAttribute="height" multiplier="4:2" id="Pno-Eo-dXL"/>
                                         <constraint firstItem="s5Y-k2-vyi" firstAttribute="leading" secondItem="u09-10-DQG" secondAttribute="leading" constant="1" id="Uad-SU-Px5"/>
