@@ -67,7 +67,7 @@ When installing the app on a device from Xcode the first time, Xcode will displa
 
 To fix that, please go to **Settings** > **General** > **Profiles & Device Management**, tap on **Developer App**, then select **Trust**:
 
-.
+
 <table border="0">
 <tr><td>
   
@@ -79,7 +79,7 @@ To fix that, please go to **Settings** > **General** > **Profiles & Device Manag
 
 </td></tr>
 </table>
-.
+
 
 Then launch the app from Xcode again, now it will run :)
 
