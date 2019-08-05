@@ -28,12 +28,20 @@
                                             <constraint firstAttribute="width" secondItem="spk-nW-oFc" secondAttribute="height" multiplier="1:1" id="Kad-Gi-d1U"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MerqueMovie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-we-PJH">
+                                        <rect key="frame" x="114" y="551.5" width="186" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="mainFucsia"/>
                                 <constraints>
+                                    <constraint firstItem="SPO-we-PJH" firstAttribute="centerX" secondItem="BSb-hd-CCk" secondAttribute="centerX" id="Ixo-JE-6nd"/>
                                     <constraint firstItem="spk-nW-oFc" firstAttribute="centerX" secondItem="BSb-hd-CCk" secondAttribute="centerX" id="Z5f-l9-7eZ"/>
                                     <constraint firstItem="spk-nW-oFc" firstAttribute="width" secondItem="BSb-hd-CCk" secondAttribute="width" multiplier="0.5" id="dZW-fu-Xsn"/>
                                     <constraint firstItem="spk-nW-oFc" firstAttribute="centerY" secondItem="BSb-hd-CCk" secondAttribute="centerY" id="dvT-VR-AOB"/>
+                                    <constraint firstItem="SPO-we-PJH" firstAttribute="top" secondItem="spk-nW-oFc" secondAttribute="bottom" id="nmM-br-yhF"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -25,11 +25,19 @@
                                     <constraint firstAttribute="width" secondItem="17B-QQ-M97" secondAttribute="height" multiplier="1:1" id="szM-26-8hA"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MerqueMovie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nII-ke-fvT">
+                                <rect key="frame" x="114" y="551.5" width="186" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="mainFucsia"/>
                         <constraints>
                             <constraint firstItem="17B-QQ-M97" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1aU-Ea-TRg"/>
                             <constraint firstItem="17B-QQ-M97" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9xf-v0-gq4"/>
+                            <constraint firstItem="nII-ke-fvT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Cyn-Cn-qrL"/>
+                            <constraint firstItem="nII-ke-fvT" firstAttribute="top" secondItem="17B-QQ-M97" secondAttribute="bottom" id="JUs-hJ-wgd"/>
                             <constraint firstItem="17B-QQ-M97" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="PsH-cU-DBt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
