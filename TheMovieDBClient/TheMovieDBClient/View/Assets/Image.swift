@@ -10,9 +10,17 @@ import UIKit
 
 enum Image: String {
     case AppIconWhite
-    case CalendarWhite
-    case StarWhite
     case AppTitleIcon
+    case CalendarWhite
+    case CountryWhite
+    case CurrencyWhite
+    case DownloadingWhite
+    case ErrorWhite
+    case GenreWhite
+    case NoInternetWhite
+    case OriginalWhite
+    case ProducedByWhite
+    case StarWhite
 }
 
 extension Image {

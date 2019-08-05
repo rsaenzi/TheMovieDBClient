@@ -200,7 +200,6 @@ extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
         case .genreTitle, .companyTitle, .countryTitle:
             return 30
             
-            
         case .genre, .country:
             return 28
             

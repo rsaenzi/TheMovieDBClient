@@ -27,7 +27,7 @@ class ApiRequest {
             ApiUtils.printNoInternet(using: endpoint)
             
             // WiFi ans Cellular connections are off
-            callback(.offline(error: LogMessage.noConnection.rawValue))
+            callback(.offline(error: "No WiFi or Cellular connection available"))
             return
         }
         
@@ -96,12 +96,4 @@ struct PrintRequest: PluginType {
     func willSend(_ request: RequestType, target: TargetType) {
         ApiUtils.print(request: request.request!)
     }
-}
-
-
-enum ApiResponse {
-    case success(result: Response)
-    case failure(error: String)
-    case offline(error: String)
-    case timeOut(error: String)
 }
